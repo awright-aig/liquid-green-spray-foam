@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brand Guidelines | Spray Liquid Green</title>
+<style>
+@page{size:A4;margin:20mm 18mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Helvetica,Arial,sans-serif;background:#fff;color:#333;line-height:1.6;font-size:11pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+img{max-width:100%;display:block}
+.page{page-break-after:always;padding:0 0 20px 0}
+.page:last-child{page-break-after:auto}
+.cover{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:90vh;text-align:center}
+.cover h1{font-size:36pt;color:#ACD155;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+.cover .sub{font-size:12pt;color:#888;text-transform:uppercase;letter-spacing:.2em}
+.cover .version{font-size:9pt;color:#aaa;margin-top:30px}
+h2{font-size:18pt;color:#ACD155;text-transform:uppercase;letter-spacing:.04em;margin:30px 0 12px;padding-bottom:6px;border-bottom:2px solid #ACD155}
+h3{font-size:13pt;color:#262626;text-transform:uppercase;letter-spacing:.03em;margin:20px 0 8px}
+h4{font-size:10pt;color:#ACD155;text-transform:uppercase;letter-spacing:.08em;margin:14px 0 6px}
+p{font-size:10pt;line-height:1.7;color:#555;margin-bottom:8px}
+ul{list-style:none;padding:0;margin-bottom:10px}
+ul li{position:relative;padding:4px 0 4px 18px;font-size:10pt;color:#555;line-height:1.5}
+ul li::before{content:'\2713';position:absolute;left:0;color:#ACD155;font-weight:700;font-size:9pt}
+ul.dont li::before{content:'\2717';color:#cc3333}
+.swatch-row{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+.swatch-box{flex:1;min-width:120px;max-width:180px;border:1px solid #ddd}
+.swatch-fill{height:50px}
+.swatch-label{padding:6px 8px;font-size:8pt}
+.swatch-label .name{font-weight:700;color:#ACD155;text-transform:uppercase;letter-spacing:.06em;font-size:7pt}
+.swatch-label .hex{color:#888;font-size:8pt}
+.type-row{display:flex;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid #eee}
+.type-label{width:140px;flex-shrink:0;font-size:7pt;font-weight:700;color:#ACD155;text-transform:uppercase;letter-spacing:.1em}
+.type-label span{display:block;font-size:7.5pt;color:#999;text-transform:none;letter-spacing:0;font-weight:400;margin-top:2px}
+.type-sample{flex:1}
+.type-sample .h1{font-size:28pt;color:#ACD155;text-transform:uppercase;letter-spacing:.04em;font-weight:700;line-height:1}
+.type-sample .h2{font-size:20pt;color:#ACD155;text-transform:uppercase;letter-spacing:.03em;font-weight:700;line-height:1.05}
+.type-sample .h3{font-size:14pt;color:#262626;text-transform:uppercase;letter-spacing:.03em;font-weight:600;line-height:1.15}
+.type-sample .h4{font-size:10pt;color:#262626;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.type-sample .eyebrow{font-size:7pt;color:#ACD155;text-transform:uppercase;letter-spacing:.25em;font-weight:600}
+.type-sample p{font-size:10pt;line-height:1.7;color:#555}
+.type-sample .lead{font-size:11pt;line-height:1.8}
+.logo-row{display:flex;gap:16px;margin:12px 0;flex-wrap:wrap}
+.logo-card{flex:1;min-width:200px;border:1px solid #ddd;padding:16px;text-align:center;background:#1a1a1a}
+.logo-card img{max-height:80px;margin:0 auto 8px}
+.logo-card .label{font-size:7pt;font-weight:700;color:#ACD155;text-transform:uppercase;letter-spacing:.08em}
+.logo-card .desc{font-size:8pt;color:#aaa;margin-top:4px}
+.code-block{background:#f5f5f5;border:1px solid #ddd;padding:10px;font-family:'Courier New',monospace;font-size:8pt;line-height:1.5;color:#333;margin:10px 0;white-space:pre-wrap}
+.icon-grid{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.icon-item{width:60px;border:1px solid #ddd;padding:6px;text-align:center;background:#262626}
+.icon-item img{width:22px;height:22px;margin:0 auto 4px}
+.icon-item .icon-name{font-size:5pt;color:#aaa;text-transform:uppercase;letter-spacing:.04em}
+.btn-row{display:flex;gap:10px;margin:10px 0;align-items:center}
+.btn-demo{display:inline-block;padding:8px 20px;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-align:center}
+.social-row{display:flex;gap:10px;margin:10px 0;align-items:center}
+.social-box{width:32px;height:32px;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;background:#f8f8f8}
+.social-box img{width:16px;height:16px}
+.do-dont{display:flex;gap:14px;margin:10px 0}
+.do-dont>div{flex:1;border:1px solid #ddd;padding:12px}
+.do-dont .dont{border-color:#cc3333}
+.do-dont h4{margin-bottom:6px}
+.do-dont .dont h4{color:#cc3333}
+.overlay-demo{position:relative;height:120px;overflow:hidden;border:1px solid #ddd;margin:10px 0}
+.overlay-demo img{width:100%;height:100%;object-fit:cover}
+.overlay-demo .overlay-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10pt;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.section-num{font-size:8pt;font-weight:700;color:#ACD155;text-transform:uppercase;letter-spacing:.2em;margin-bottom:4px}
+hr{border:none;border-top:1px solid #eee;margin:20px 0}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="page cover">
+  <h1>Brand Guidelines</h1>
+  <div class="sub">Spray Liquid Green &mdash; Spray Foam Insulation</div>
+  <p style="max-width:400px;margin:20px auto 0;font-size:10pt;color:#888;">Visual identity system covering logo usage, color palette, typography, iconography, UI components, and digital standards.</p>
+  <div class="version">Version 1.0 &bull; June 2025</div>
+</div>
+
+<!-- 01 LOGO SYSTEM -->
+<div class="page">
+  <div class="section-num">01 &mdash; Identity</div>
+  <h2>Logo System</h2>
+  <p>The Liquid Green brand uses three distinct logo assets, each serving a specific role. All logos must be used as-is with no modifications, distortion, or color changes.</p>
+
+  <h3>Primary Full Logo</h3>
+  <p>The complete wordmark displaying "LIQUID GREEN SPRAY FOAM INSULATION" in the Rubik Distressed typeface. Used for hero sections and large-format placements.</p>
+  <div class="logo-row">
+    <div class="logo-card">
+      <img src="../../assets/img/logo-transparent.png" alt="Full Logo">
+      <div class="label">Primary Full Logo</div>
+      <div class="desc">Hero sections &bull; 2000&times;2000px RGBA</div>
+    </div>
+    <div class="logo-card">
+      <img src="../../assets/img/franchise-liquid-green-logo-transparent.png" alt="Franchise Logo">
+      <div class="label">Franchise Hero Logo</div>
+      <div class="desc">Franchise page hero &bull; 2000&times;2000px RGBA</div>
+    </div>
+  </div>
+
+  <h3>Navigation Icon &mdash; Spray Gun</h3>
+  <p>The lime-green spray paint gun silhouette. Used in the header navigation bar and as the browser favicon.</p>
+  <div class="logo-row">
+    <div class="logo-card">
+      <img src="../../assets/img/menu-logo.png" alt="Spray Gun" style="max-height:60px;">
+      <div class="label">Nav Bar Logo</div>
+      <div class="desc">Header nav &bull; 95&times;83px &bull; 46px height desktop</div>
+    </div>
+    <div class="logo-card">
+      <img src="../../assets/img/favicon-180.png" alt="Favicon" style="max-height:60px;">
+      <div class="label">Favicon / Apple Touch</div>
+      <div class="desc">Browser tabs &bull; 180, 32, 16px + ICO</div>
+    </div>
+  </div>
+
+  <h3>Logo Sizing Reference</h3>
+  <ul>
+    <li>Home/ franchise hero logo: width: min(580px, 90vw) with drop-shadow</li>
+    <li>Nav bar spray gun: height 46px (desktop), 36px (mobile)</li>
+    <li>Favicon: 32&times;32 standard, 180&times;180 Apple Touch</li>
+  </ul>
+</div>
+
+<!-- 02 COLOR SYSTEM -->
+<div class="page">
+  <div class="section-num">02 &mdash; Palette</div>
+  <h2>Color System</h2>
+  <p>The Liquid Green palette is built on a dark foundation with a signature lime accent and purple secondary. This high-contrast system creates a bold, professional, and energetic identity.</p>
+
+  <h3>Primary Colors</h3>
+  <div class="swatch-row">
+    <div class="swatch-box"><div class="swatch-fill" style="background:#ACD155"></div><div class="swatch-label"><div class="name">Lime</div><div class="hex">#ACD155</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:#BADA55"></div><div class="swatch-label"><div class="name">Lime Bright</div><div class="hex">#BADA55</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:#D3EA9C"></div><div class="swatch-label"><div class="name">Lime Light</div><div class="hex">#D3EA9C</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:#262626"></div><div class="swatch-label"><div class="name">Charcoal / Dark</div><div class="hex">#262626</div></div></div>
+  </div>
+
+  <h3>Secondary Colors</h3>
+  <div class="swatch-row">
+    <div class="swatch-box"><div class="swatch-fill" style="background:#8138B7"></div><div class="swatch-label"><div class="name">Purple</div><div class="hex">#8138B7</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:#A37CBF"></div><div class="swatch-label"><div class="name">Lavender</div><div class="hex">#A37CBF</div></div></div>
+  </div>
+
+  <h3>Neutral / Text Colors</h3>
+  <div class="swatch-row">
+    <div class="swatch-box"><div class="swatch-fill" style="background:#FFFFFF;border:1px solid #ddd"></div><div class="swatch-label"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:#CFC8C0"></div><div class="swatch-label"><div class="name">Off-White / Body</div><div class="hex">#CFC8C0</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:rgba(0,0,0,.4)"></div><div class="swatch-label"><div class="name">Ghost (60%)</div><div class="hex">rgba(255,255,255,.6)</div></div></div>
+    <div class="swatch-box"><div class="swatch-fill" style="background:rgba(0,0,0,.3)"></div><div class="swatch-label"><div class="name">Muted (70%)</div><div class="hex">rgba(255,255,255,.7)</div></div></div>
+  </div>
+
+  <h3>Common Transparency Values</h3>
+  <div class="code-block">rgba(172,209,85,.18) — Card borders, dividers
+rgba(172,209,85,.25) — Stat box borders
+rgba(172,209,85,.30) — Icon box borders, hover borders
+rgba(172,209,85,.50) — Hover border highlight
+rgba(172,209,85,.12) — Subtle backgrounds on hover
+rgba(172,209,85,.15) — Section dividers, header border</div>
+</div>
+
+<!-- 03 TYPOGRAPHY -->
+<div class="page">
+  <div class="section-num">03 &mdash; Type</div>
+  <h2>Typography</h2>
+  <p>Four font families serve specific roles. Rubik Distressed gives headlines the brand's signature grunge texture, while Poppins ensures body text remains clean and readable.</p>
+
+  <div class="type-row">
+    <div class="type-label">H1 / .h1<span>Rubik Distressed<br>400 &bull; clamp(42,7vw,76px)<br>uppercase &bull; .06em</span></div>
+    <div class="type-sample"><div class="h1">Got Foam?</div></div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">H2 / .h2<span>Rubik Distressed<br>400 &bull; clamp(32,4.5vw,52px)<br>uppercase &bull; .05em</span></div>
+    <div class="type-sample"><div class="h2">Why Spray Liquid Green</div></div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">H3 / .h3<span>Oswald<br>600 &bull; clamp(22,2.5vw,32px)<br>uppercase &bull; .04em</span></div>
+    <div class="type-sample"><div class="h3">Superior Thermal Performance</div></div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">H4<span>Raleway<br>600 &bull; 16px<br>uppercase &bull; .12em</span></div>
+    <div class="type-sample"><div class="h4">Section Subtitle</div></div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Eyebrow<span>Raleway 600 &bull; 12px<br>uppercase &bull; .3em<br>+ 30px lime rule</span></div>
+    <div class="type-sample"><div class="eyebrow">Key Benefits</div></div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Body / p<span>Poppins<br>400 &bull; 15px<br>1.85 line-height</span></div>
+    <div class="type-sample"><p>Spray foam insulation provides the highest R-value per inch of any insulation material, keeping your home warmer in winter and cooler in summer.</p></div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Lead<span>Poppins<br>400 &bull; 17px<br>1.9 line-height</span></div>
+    <div class="type-sample"><p class="lead">We have created many strong believers in foam insulation throughout our years in business.</p></div>
+  </div>
+
+  <h3>Font Stack</h3>
+  <div class="code-block">font-family: 'Rubik Distressed', 'Oswald', sans-serif;  /* h1, h2 */
+font-family: 'Oswald', sans-serif;                         /* h3 */
+font-family: 'Raleway', sans-serif;                        /* h4, eyebrow, nav, buttons */
+font-family: 'Poppins', sans-serif;                        /* body, p */</div>
+
+  <h3>Text Color Hierarchy</h3>
+  <ul>
+    <li>Headlines (h1, h2): #ACD155 (Lime)</li>
+    <li>Subheads (h3, h4): #FFFFFF (White)</li>
+    <li>Eyebrows / Labels: #ACD155 (Lime)</li>
+    <li>Body text: #CFC8C0 (Off-White)</li>
+    <li>Navigation links: rgba(255,255,255,.6) (Ghost)</li>
+  </ul>
+</div>
+
+<!-- 04 ICONOGRAPHY -->
+<div class="page">
+  <div class="section-num">04 &mdash; Icons</div>
+  <h2>Iconography</h2>
+  <p>All custom icons use a consistent SVG style: 24&times;24 viewBox, no fill, lime-green strokes with square line caps. This creates a unified, industrial aesthetic matching the brand's construction focus.</p>
+
+  <h3>SVG Icon Specification</h3>
+  <div class="code-block">viewBox: "0 0 24 24"
+fill: "none"
+stroke: "#ACD155"
+stroke-width: "1.5"
+stroke-linecap: "square"</div>
+
+  <h3>Icon Library</h3>
+  <div class="icon-grid" id="icon-grid-pdf"></div>
+</div>
+
+<!-- 05 BUTTONS -->
+<div class="page">
+  <div class="section-num">05 &mdash; Components</div>
+  <h2>Buttons</h2>
+  <p>Buttons use sharp corners (border-radius: 0) for an industrial, no-nonsense look. All buttons share a consistent hover effect: translateY(-3px) with a deep shadow and lime border highlight.</p>
+
+  <h3>Button Variants</h3>
+  <div class="btn-row">
+    <div class="btn-demo" style="background:#ACD155;color:#262626;border:2px solid #ACD155;">Primary</div>
+    <div class="btn-demo" style="background:transparent;color:#ACD155;border:2px solid #ACD155;">Outline</div>
+    <div class="btn-demo" style="background:#8138B7;color:#fff;border:2px solid #8138B7;">Purple</div>
+  </div>
+
+  <h3>Button Specification</h3>
+  <div class="code-block">font-family: 'Raleway', sans-serif;
+font-weight: 700;
+font-size: 13px;
+letter-spacing: .1em;
+text-transform: uppercase;
+min-height: 48px;
+padding: 12px 28px;
+border: 2px solid var(--lime);
+border-radius: 0;  /* No rounded corners */
+
+/* Hover */
+transform: translateY(-3px) scale(1.02);
+box-shadow: 0 14px 38px rgba(0,0,0,.28);
+border-color: var(--lime-bright);</div>
+
+  <h3>Usage Notes</h3>
+  <ul>
+    <li>Primary buttons: Lime background with dark text &mdash; used for main CTAs</li>
+    <li>Outline buttons: Transparent with lime border and text &mdash; used for secondary actions</li>
+    <li>Purple buttons: Purple background with white text &mdash; used only for franchise-related CTAs</li>
+    <li>All buttons share the same hover animation system defined in CSS custom properties</li>
+  </ul>
+</div>
+
+<!-- 06 HERO OVERLAY -->
+<div class="page">
+  <div class="section-num">06 &mdash; Hero Treatment</div>
+  <h2>Hero Overlay</h2>
+  <p>The hero sections use a dark semi-transparent overlay over the video or image background. This matches the original sprayliquidgreen.com Wix-built site's treatment and ensures text readability while preserving the visual impact of the background media.</p>
+
+  <h3>Overlay Specifications</h3>
+  <div class="overlay-demo">
+    <div class="overlay-label" style="background:rgba(0,0,0,.66);">rgba(0,0,0,.66) &mdash; Hero Video Overlay</div>
+  </div>
+
+  <div class="code-block" style="margin-top:20px;">
+/* Home page hero video overlay */
+.hero-video .hero-overlay {
+  background: rgba(0,0,0,.66);
+  z-index: 2;
+}
+
+/* Inner page hero video overlay */
+.page-hero.page-hero-video .hero-overlay {
+  background: rgba(0,0,0,.66);
+}
+
+/* Inner page hero image overlay */
+.page-hero .hero-overlay {
+  background: linear-gradient(135deg, rgba(26,26,26,.88), rgba(38,38,38,.7));
+}</div>
+
+  <h3>Hero Logo Treatment</h3>
+  <p>The full Liquid Green logo sits on top of the overlay with a subtle drop-shadow for depth separation:</p>
+  <div class="code-block">.hero-logo-wrap img {
+  width: min(580px, 90vw);
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,.5));
+}</div>
+</div>
+
+<!-- 07 SOCIAL MEDIA ICONS -->
+<div class="page">
+  <div class="section-num">07 &mdash; Social</div>
+  <h2>Social Media Icons</h2>
+  <p>All social media icons (Facebook, Instagram, Yelp) use the same visual treatment: their original colored source images are transformed to lime-green via a CSS filter, creating a unified monochromatic appearance. On hover, they invert to near-black against a lime-green background.</p>
+
+  <h3>CSS Filter &mdash; Default State (Lime-Green)</h3>
+  <div class="code-block">/* Default: transforms any colored icon to lime-green */
+filter: brightness(0) saturate(100%) invert(72%) sepia(50%)
+        saturate(500%) hue-rotate(40deg) brightness(95%) contrast(90%);</div>
+
+  <h3>CSS Filter &mdash; Hover State (Near-Black on Lime)</h3>
+  <div class="code-block">/* Hover: transforms to near-black */
+filter: brightness(0) saturate(0%) invert(10%);</div>
+
+  <h3>Placement</h3>
+  <ul>
+    <li>Sidebar: Fixed left edge, vertically centered, 40&times;40px per icon (desktop only, hidden on mobile)</li>
+    <li>Footer: Inline row within the first column, 36&times;36px per icon with border</li>
+  </ul>
+
+  <h3>Implementation Detail</h3>
+  <p>The filter technique ensures any new social icon can be added without manual color editing &mdash; simply apply the same CSS class and the filter automatically converts it to the brand's lime-green color.</p>
+</div>
+
+<!-- 08 LAYOUT & SPACING -->
+<div class="page">
+  <div class="section-num">08 &mdash; Layout</div>
+  <h2>Layout & Spacing</h2>
+
+  <h3>Grid & Container</h3>
+  <ul>
+    <li>Max content width: 1140px (var(--max))</li>
+    <li>Container padding: 20px each side (desktop), 12px (mobile)</li>
+    <li>Header height: 78px (desktop), 64px (mobile)</li>
+  </ul>
+
+  <h3>Section Padding</h3>
+  <ul>
+    <li>Desktop: 80px top and bottom</li>
+    <li>Mobile: 60px top and bottom</li>
+  </ul>
+
+  <h3>Card System</h3>
+  <ul>
+    <li>Border: 1px solid rgba(172,209,85,.18)</li>
+    <li>Background: rgba(255,255,255,.04)</li>
+    <li>Padding: 28px</li>
+    <li>Hover: Lime-tinted gradient background + brighter border</li>
+  </ul>
+
+  <h3>Grid Layouts</h3>
+  <ul>
+    <li>2-column: grid-template-columns: repeat(2, 1fr)</li>
+    <li>3-column: grid-template-columns: repeat(3, 1fr)</li>
+    <li>4-column: grid-template-columns: repeat(4, 1fr)</li>
+    <li>Gap: 20px (cards), 16px (gallery), 14px (forms)</li>
+  </ul>
+
+  <h3>Breakpoints</h3>
+  <div class="code-block">@media (max-width: 980px)  /* Tablet */
+@media (max-width: 640px)  /* Mobile */</div>
+
+  <h3>Footer Grid</h3>
+  <ul>
+    <li>Desktop: 4 columns &mdash; 1.3fr 1fr 1fr 1fr</li>
+    <li>Tablet: 2 columns</li>
+    <li>Mobile: 1 column</li>
+  </ul>
+</div>
+
+<!-- 09 CSS DESIGN TOKENS -->
+<div class="page">
+  <div class="section-num">09 &mdash; Tokens</div>
+  <h2>CSS Design Tokens</h2>
+  <p>The complete set of CSS custom properties used throughout the site. These serve as the single source of truth for the visual system.</p>
+
+  <div class="code-block">:root {
+  /* Colors */
+  --lime: #ACD155;
+  --lime-bright: #BADA55;
+  --lime-light: #D3EA9C;
+  --dark: #262626;
+  --purple: #8138B7;
+  --lavender: #A37CBF;
+  --lavender-soft: rgba(163,124,191,.9);
+  --white: #FFFFFF;
+  --offwhite: #CFC8C0;
+  --ghost: rgba(255,255,255,.6);
+  --muted: rgba(255,255,255,.7);
+  --body-text: #CFC8C0;
+
+  /* Layout */
+  --max: 1140px;
+  --header: 78px;
+
+  /* Hover System */
+  --hover-transform: translateY(-3px) scale(1.02);
+  --hover-shadow: 0 14px 38px rgba(0,0,0,.28);
+  --hover-border: rgba(172,209,85,.5);
+}</div>
+
+  <h3>Global Hover System</h3>
+  <p>Every interactive element across the site shares a single consistent hover effect defined by three CSS custom properties. This includes cards, buttons, nav links, social icons, FAQ items, gallery items, and carousel arrows.</p>
+  <div class="code-block">/* Applied to all interactive elements */
+.hoverable:hover, .btn:hover, .nav-link:hover, .card:hover, ... {
+  transform: var(--hover-transform);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--hover-border);
+}</div>
+
+  <h3>Selection Color</h3>
+  <div class="code-block">::selection { background: var(--lime); color: var(--dark); }</div>
+</div>
+
+<!-- 10 USAGE RULES -->
+<div class="page">
+  <div class="section-num">10 &mdash; Rules</div>
+  <h2>Usage Rules</h2>
+
+  <h3>Logo Usage</h3>
+  <div class="do-dont">
+    <div>
+      <h4 style="color:#ACD155;">Do</h4>
+      <ul>
+        <li>Use the full logo (logo-transparent.png) for hero sections and large placements</li>
+        <li>Use the spray gun icon (menu-logo.png) for navigation headers at 46px height</li>
+        <li>Use the spray gun favicon for browser tabs and bookmarks</li>
+        <li>Maintain transparent backgrounds on all logo variants</li>
+        <li>Apply drop-shadow on hero logos over video/image backgrounds</li>
+        <li>Keep adequate clear space around all logo marks</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h4>Don't</h4>
+      <ul class="dont">
+        <li>Don't stretch, skew, or distort any logo variant</li>
+        <li>Don't change the logo colors from the original lime-green palette</li>
+        <li>Don't place logos on light backgrounds without a dark container</li>
+        <li>Don't use the full logo at small sizes where text becomes illegible</li>
+        <li>Don't add rounded corners, gradients, or effects not in this guide</li>
+        <li>Don't recreate or substitute the logos with different typefaces</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Color Usage</h3>
+  <div class="do-dont">
+    <div>
+      <h4 style="color:#ACD155;">Do</h4>
+      <ul>
+        <li>Use Lime (#ACD155) as the primary accent for all headlines, borders, and CTAs</li>
+        <li>Use Charcoal (#262626) as the dominant background color</li>
+        <li>Use Purple (#8138B7) sparingly for secondary highlights and franchise content</li>
+        <li>Use rgba transparency values for subtle borders and hover states</li>
+        <li>Maintain high contrast between lime elements and dark backgrounds</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h4>Don't</h4>
+      <ul class="dont">
+        <li>Don't introduce new colors outside the defined palette</li>
+        <li>Don't use lime as a background for large text areas (readability issues)</li>
+        <li>Don't use white as a background &mdash; the brand is dark-first</li>
+        <li>Don't apply purple to primary navigation or main headlines</li>
+        <li>Don't use saturated lime on lime (no lime text on lime background)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Typography Usage</h3>
+  <div class="do-dont">
+    <div>
+      <h4 style="color:#ACD155;">Do</h4>
+      <ul>
+        <li>Use Rubik Distressed exclusively for h1 and h2 headlines</li>
+        <li>Use Oswald for h3 sub-headings within content sections</li>
+        <li>Use Raleway for navigation, eyebrow labels, and button text</li>
+        <li>Use Poppins for all body copy and paragraph text</li>
+        <li>Maintain uppercase on all headlines, navigation, and buttons</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h4>Don't</h4>
+      <ul class="dont">
+        <li>Don't use Rubik Distressed for body text or small sizes</li>
+        <li>Don't mix font families in the same hierarchy level</li>
+        <li>Don't use lowercase for headlines or navigation items</li>
+        <li>Don't substitute system fonts for the specified Google Fonts</li>
+        <li>Don't reduce letter-spacing below the defined values</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Iconography Rules</h3>
+  <div class="do-dont">
+    <div>
+      <h4 style="color:#ACD155;">Do</h4>
+      <ul>
+        <li>Use the standard SVG style: stroke #ACD155, width 1.5, square caps</li>
+        <li>Display icons in a bordered box with lime border</li>
+        <li>Keep icon sizes consistent: 26px within 50px icon boxes</li>
+        <li>Apply the same CSS filter to social icons for lime-green uniformity</li>
+      </ul>
+    </div>
+    <div class="dont">
+      <h4>Don't</h4>
+      <ul class="dont">
+        <li>Don't change icon stroke color from #ACD155</li>
+        <li>Don't fill icons (they are stroke-only, no fill)</li>
+        <li>Don't use rounded line caps (must be square)</li>
+        <li>Don't show social icons in their original brand colors</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING / FOOTER -->
+<div style="text-align:center;padding:40px 0;border-top:1px solid #eee;margin-top:30px;">
+  <p style="font-size:9pt;color:#aaa;letter-spacing:.15em;text-transform:uppercase;">&copy; 2025 Spray Liquid Green &bull; Brand Guidelines v1.0</p>
+</div>
+
+<script>
+  // Populate icon grid in PDF
+  const iconNames = [
+    'air-seal','attic','barn','basement','building','chart','clean','clipboard',
+    'clock','closed-cell','crawl','crm','dollar','energy','facebook','family',
+    'fire','flag','gear','globe','home-value','house','instagram','key','leaf',
+    'lock','moisture','mold','no-pest','open-cell','pool','renovation','rim-joist',
+    'roof','rvalue','sound','star','thermal','training','trending','truck',
+    'wall','warehouse','wind','wrench'
+  ];
+  const grid = document.getElementById('icon-grid-pdf');
+  if(grid){
+    iconNames.forEach(name => {
+      const item = document.createElement('div');
+      item.className = 'icon-item';
+      item.innerHTML = '<img src="../../assets/icons/' + name + '.svg" alt="' + name + '"><div class="icon-name">' + name + '</div>';
+      grid.appendChild(item);
+    });
+  }
+</script>
+</body>
+</html>
