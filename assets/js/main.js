@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   /* --- Mobile menu toggle --- */
   const toggle=qs('.mobile-toggle');const menu=qs('.nav-menu');
   if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false')})}
-  qsa('.nav-item.has-dropdown>.nav-link').forEach(link=>{link.addEventListener('click',e=>{if(window.innerWidth<=980){e.preventDefault();link.parentElement.classList.toggle('open')}})});
+  qsa('.nav-item.has-dropdown>.nav-link').forEach(link=>{link.addEventListener('click',e=>{e.preventDefault();const open=link.parentElement.classList.toggle('open');link.setAttribute('aria-expanded',open?'true':'false')})});
 
   /* --- Carousels --- */
   qsa('.carousel').forEach(initCarousel);
