@@ -1,0 +1,12 @@
+# robots.txt — Spray Liquid Green
+# https://sprayliquidgreen.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block Hostinger-generated / system paths if any get added later
+Disallow: /cgi-bin/
+Disallow: /.well-known/
+
+# Sitemap
+Sitemap: https://sprayliquidgreen.com/sitemap.xml
