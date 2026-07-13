@@ -225,6 +225,15 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .page-hero .hero-logo-wrap{margin-bottom:18px}
 .page-hero .hero-logo-wrap img{height:auto;width:min(2320px,90vw);display:block;filter:drop-shadow(0 4px 20px rgba(0,0,0,.5))}
 
+/* --- BREADCRUMBS --- */
+.breadcrumbs{font-size:13px;color:rgba(255,255,255,.6);padding:14px 0 0;margin:0 auto;max-width:1200px}
+.breadcrumbs ol{list-style:none;padding:0 20px;margin:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.breadcrumbs li{display:inline-flex;align-items:center;gap:6px}
+.breadcrumbs li+li::before{content:"›";color:rgba(255,255,255,.4);margin-right:2px}
+.breadcrumbs a{color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.breadcrumbs a:hover{color:var(--lime);border-bottom-color:currentColor}
+.breadcrumbs [aria-current="page"]{color:var(--lime);font-weight:500}
+
 /* --- FOOTER --- */
 .footer{background:var(--dark);border-top:1px solid rgba(172,209,85,.12);padding:60px 0 24px}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
