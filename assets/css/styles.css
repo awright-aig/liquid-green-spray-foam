@@ -99,6 +99,9 @@ p,.body-text{font-family:'Poppins',sans-serif;font-weight:400;font-size:15px;lin
 .hero-logo-wrap{display:inline-block;margin-bottom:18px}
 .hero-logo-wrap img{height:auto;width:min(2320px,90vw);display:block;filter:drop-shadow(0 4px 20px rgba(0,0,0,.5))}
 .hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:12px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+/* Right-half brand gradient overlay — fades from transparent on the left to lime→purple on the right */
+.hero-gradient-overlay{position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(to right,transparent 0%,rgba(172,209,85,.35) 35%,rgba(129,56,183,.55) 100%);z-index:2;pointer-events:none}
+.page-hero .hero-gradient-overlay{position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(to right,transparent 0%,rgba(172,209,85,.35) 35%,rgba(129,56,183,.55) 100%);z-index:2;pointer-events:none}
 .hero .lead{color:rgba(255,255,255,.85);max-width:620px;margin-inline:auto;margin-bottom:32px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:40px}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:640px;margin-inline:auto}
@@ -301,6 +304,7 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
   .hero-video-wrap iframe{top:-40px;height:calc(100% + 80px)}
   .split,.territory-section{grid-template-columns:1fr}
   .benefits-grid,.grid.three,.grid.four,.contact-row{grid-template-columns:1fr 1fr}
+  .hero-gradient-overlay,.page-hero .hero-gradient-overlay{width:100%;background:linear-gradient(to right,transparent 0%,rgba(172,209,85,.3) 50%,rgba(129,56,183,.5) 100%)}
   .carousel .card{flex-basis:calc((100% - 18px)/2)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .stat-row{grid-template-columns:1fr 1fr}
