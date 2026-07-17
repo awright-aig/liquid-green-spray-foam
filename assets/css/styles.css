@@ -245,6 +245,35 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .no-exp-stat span{font-size:11px;color:var(--offwhite);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
 .no-exp-stat:hover{border-color:rgba(129,56,183,.6);background:linear-gradient(135deg,rgba(172,209,85,.18) 0%,rgba(129,56,183,.22) 100%);box-shadow:0 8px 24px rgba(129,56,183,.25)}
 
+/* --- GOOGLE REVIEW SECTION (GBP ask-for-review CTA) --- */
+.greview-section{padding:60px 0;border-top:1px solid rgba(172,209,85,.15);border-bottom:1px solid rgba(172,209,85,.15);background:linear-gradient(135deg,rgba(255,255,255,.02) 0%,rgba(172,209,85,.04) 100%)}
+.greview-card{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between;padding:36px 40px;border:1px solid rgba(172,209,85,.22);border-radius:14px;background:rgba(10,10,10,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;overflow:hidden;isolation:isolate}
+.greview-card::before{content:"";position:absolute;top:-50%;right:-15%;width:50%;height:200%;background:radial-gradient(ellipse at center,rgba(66,133,244,.18) 0%,transparent 60%);z-index:-1;pointer-events:none}
+.greview-left{display:flex;align-items:flex-start;gap:20px;flex:1 1 480px;min-width:0}
+.greview-gicon{width:56px;height:56px;display:grid;place-items:center;background:#fff;border-radius:50%;flex-shrink:0;box-shadow:0 6px 18px rgba(66,133,244,.25);margin-top:2px}
+.greview-gicon img{width:32px;height:32px;display:block}
+.greview-text{flex:1;min-width:0;max-width:680px}
+.greview-stars{display:flex;gap:2px;margin-bottom:6px;color:#FFC107;font-size:18px;line-height:1;letter-spacing:1px}
+.greview-stars span{font-family:'Oswald',sans-serif}
+.greview-title{margin:0 0 8px;font-family:'Raleway',sans-serif;font-size:22px;font-weight:700;color:var(--white);line-height:1.3;letter-spacing:-.01em;text-shadow:none}
+.greview-sub{margin:0 0 6px;color:var(--offwhite);font-size:14px;line-height:1.55}
+.greview-actions{display:flex;gap:12px;flex-shrink:0;align-items:center;margin-left:auto}
+.greview-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);color:#fff;font-weight:700;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:14px;text-decoration:none;border:none;border-radius:6px;transition:transform .3s,box-shadow .3s;box-shadow:0 6px 18px rgba(129,56,183,.3);cursor:pointer}
+.greview-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(129,56,183,.5)}
+.greview-btn img{width:18px;height:18px;filter:brightness(0) saturate(0%) invert(1)}
+.greview-meta{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+@media (max-width:900px){
+  .greview-card{flex-direction:column;align-items:stretch;padding:28px 24px}
+  .greview-left{flex-direction:column;align-items:flex-start}
+  .greview-actions{margin-left:0;justify-content:flex-start}
+}
+@media (max-width:640px){
+  .greview-card{padding:24px 20px;text-align:center}
+  .greview-left{flex-direction:column;align-items:center}
+  .greview-actions{justify-content:center}
+  .greview-title{font-size:19px}
+}
+
 /* --- PAGE HERO (for inner pages with bg image) --- */
 .page-hero{position:relative;padding:140px 0 60px;background:var(--dark);border-bottom:1px solid rgba(172,209,85,.1);overflow:hidden}
 .page-hero .hero-bg{position:absolute;inset:0;z-index:1}
