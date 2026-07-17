@@ -359,6 +359,33 @@
   margin: 12px 0;
 }
 
+/* Photo strip — 2 side-by-side images with a small caption */
+.photo-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0 4px;
+}
+.photo-strip img {
+  width: 100%;
+  height: 1.6in;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  display: block;
+}
+
+/* Compact bullet list — tighter than default <ul> */
+.compact-list {
+  list-style: disc;
+  margin: 6px 0 8px;
+  padding-left: 20px;
+}
+.compact-list li {
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+
 /* Brand color accents */
 .accent-bar {
   height: 3px;
@@ -457,6 +484,10 @@
 
   /* Tighter two-col in print */
   .two-col { gap: 14px !important; }
+  .photo-strip { gap: 8px !important; margin: 8px 0 !important; }
+  .photo-strip img { height: 1.4in !important; }
+  .compact-list { margin: 4px 0 6px !important; padding-left: 18px !important; }
+  .compact-list li { margin-bottom: 2px !important; line-height: 1.35 !important; font-size: 9pt !important; }
   .sig-row { margin-top: 10px !important; gap: 16px !important; }
   .sig-block { height: 22px !important; }
 
@@ -467,6 +498,9 @@
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+  /* Force all images to load in print mode (bypasses lazy loading) */
+  img { loading: eager !important; }
+
   a[href]::after { content: "" !important; }
 }
 </style>
@@ -818,7 +852,7 @@
   <!-- ============================================================== -->
   <!-- PAGE 2 — ABOUT LIQUID GREEN                                     -->
   <!-- ============================================================== -->
-  <div class="doc-page" id="page-2">
+  <div class="doc-page" id="page-3">
     <div class="doc-header">
       <img src="assets/img/franchise-liquid-green-logo-transparent.png" alt="Liquid Green Franchising">
       <span class="kit-id">About Liquid Green &middot; Page 3 of 8</span>
@@ -828,7 +862,7 @@
       <div class="accent-bar"></div>
 
       <h2>Who We Are</h2>
-      <p>Liquid Green Spray Foam Insulation is a family-run, owner-operated insulation contractor serving residential and commercial customers across the Northeast. Since 2010, we have installed open-cell and closed-cell spray foam insulation in homes, barns, attics, basements, rim joists, and roofs throughout the Hudson Valley, the Tri-State region, and beyond.</p>
+      <p>Liquid Green Spray Foam Insulation provides advanced insulation solutions for homes and businesses, helping customers save energy and improve building performance. Established operations date back to 2010, incorporated in 2017, and led by experienced ownership focused on scalable growth.</p>
       <p>Our work is built on a simple idea: <strong>do it once, do it right, guarantee it for life.</strong> That principle is why our customers refer their friends, why our crews keep coming back, and why we are now offering the same model to franchise partners across the United States.</p>
 
       <h2>What We Do</h2>
@@ -862,6 +896,12 @@
       <h2>Where We Operate</h2>
       <p>Liquid Green is headquartered in Brewster, New York, with an active service area across the Hudson Valley, the Tri-State Metro (NY / NJ / CT), New England, the Mid-Atlantic, and New York's Capital Region. As a franchise system, we are actively developing territories in New York, Connecticut, Pennsylvania, Florida, and Texas, with new operator applications accepted nationwide.</p>
 
+      <h2>What We Look Like In The Field</h2>
+      <div class="photo-strip">
+        <img src="assets/img/crew-spraying-open-cell.jpg" alt="Liquid Green crew member spraying open-cell spray foam in a wall cavity">
+        <img src="assets/img/truck-residential-job.jpg" alt="Liquid Green spray foam truck at a residential job site">
+      </div>
+
       <div class="callout">
         <strong>Brand promise.</strong> Every job is lifetime-guaranteed. We show up when we say we will. We clean up before we leave. We are the crew our customers call back.
       </div>
@@ -875,7 +915,7 @@
   <!-- ============================================================== -->
   <!-- PAGE 3 — WHY LIQUID GREEN                                       -->
   <!-- ============================================================== -->
-  <div class="doc-page" id="page-3">
+  <div class="doc-page" id="page-4">
     <div class="doc-header">
       <img src="assets/img/franchise-liquid-green-logo-transparent.png" alt="Liquid Green Franchising">
       <span class="kit-id">Why Liquid Green &middot; Page 4 of 8</span>
@@ -888,24 +928,32 @@
       <p>The spray foam industry has a reputation for being a closed club &mdash; high entry cost, long training cycles, regional fiefdoms, and franchise agreements that favor the franchisor. Liquid Green was built on a different premise: a model that an operator can actually run.</p>
 
       <h2>The Advantages</h2>
+      <ul class="compact-list">
+        <li><strong>Lower Startup Investment:</strong> Affordable entry compared to major insulation franchises that often exceed $200,000&ndash;$500,000. Total investment $136,000&ndash;$194,000.</li>
+        <li><strong>Mobile Business Model:</strong> No storefront required. Run the business from your home, a small shop, or the job site.</li>
+        <li><strong>Streamlined Services:</strong> Efficient operations designed for faster growth, refined from more than a decade of installation experience.</li>
+        <li><strong>Transparent Fees:</strong> No hidden national advertising costs. Clear, upfront fee structure.</li>
+        <li><strong>Scalable Opportunities:</strong> Target revenue $500,000 in 3&ndash;5 years, with protected territories and multi-territory ownership.</li>
+        <li><strong>CRM for Franchise Management:</strong> Track leads, manage customers, and schedule crews from one platform &mdash; not five apps and a spreadsheet.</li>
+      </ul>
 
-      <h3>Lower Startup Investment</h3>
-      <p>Affordable entry compared to major insulation franchises that often exceed $200,000&ndash;$500,000. Total startup investment ranges from $136,000 to $194,000, including equipment, training, initial inventory, and launch support.</p>
+      <h2>What We Offer</h2>
+      <ul class="compact-list">
+        <li><strong>Lower Startup Investment:</strong> Affordable entry compared to major insulation franchises</li>
+        <li><strong>Mobile Business Model:</strong> No storefront required</li>
+        <li><strong>Streamlined Services:</strong> Efficient operations for faster growth</li>
+        <li><strong>Transparent Fees:</strong> No hidden national advertising costs</li>
+        <li><strong>Scalable Opportunities:</strong> Built for growth from day one</li>
+      </ul>
 
-      <h3>Mobile Business Model</h3>
-      <p>No storefront required. Operate from your home, a small shop, or the job site. The spray rig and a pickup or box truck are everything you need to run the business day one.</p>
-
-      <h3>Streamlined Services</h3>
-      <p>Efficient operations designed for faster growth. A proven business model built on more than a decade of spray foam installation experience, refined into a playbook you can follow.</p>
-
-      <h3>Transparent Fees</h3>
-      <p>No hidden national advertising costs. Clear, upfront fee structure so you know exactly what to expect. The agreement you sign is the agreement you live with.</p>
-
-      <h3>Scalable Opportunities</h3>
-      <p>Built for growth from day one. Target revenue potential of $500,000 within 3&ndash;5 years, with protected territories to support market expansion. Multi-territory ownership is available for operators ready to grow a regional business.</p>
-
-      <h3>CRM for Franchise Management</h3>
-      <p>Streamline operations with a built-in CRM designed for franchise management. Track leads, manage customers, schedule crews, and grow your business from one platform &mdash; not five different apps and a spreadsheet.</p>
+      <h2>Why Join Us</h2>
+      <ul class="compact-list">
+        <li>Tap into the growing energy efficiency and construction market</li>
+        <li>Protected territories to support market expansion</li>
+        <li>Operate a recurring-demand, service-based business</li>
+        <li>Flexible, mobile operation for maximum efficiency</li>
+        <li>Startup investment from $136,000 to $194,000</li>
+      </ul>
 
       <h2>What You Don't Get From Us</h2>
       <ul>
@@ -929,7 +977,7 @@
   <!-- ============================================================== -->
   <!-- PAGE 4 — THE NUMBERS                                            -->
   <!-- ============================================================== -->
-  <div class="doc-page" id="page-4">
+  <div class="doc-page" id="page-5">
     <div class="doc-header">
       <img src="assets/img/franchise-liquid-green-logo-transparent.png" alt="Liquid Green Franchising">
       <span class="kit-id">The Numbers &middot; Page 5 of 8</span>
@@ -1007,7 +1055,7 @@
   <!-- ============================================================== -->
   <!-- PAGE 5 — TRAINING & SUPPORT                                     -->
   <!-- ============================================================== -->
-  <div class="doc-page" id="page-5">
+  <div class="doc-page" id="page-6">
     <div class="doc-header">
       <img src="assets/img/franchise-liquid-green-logo-transparent.png" alt="Liquid Green Franchising">
       <span class="kit-id">Training &amp; Support &middot; Page 6 of 8</span>
@@ -1064,7 +1112,7 @@
   <!-- ============================================================== -->
   <!-- PAGE 6 — THE PROCESS                                            -->
   <!-- ============================================================== -->
-  <div class="doc-page" id="page-6">
+  <div class="doc-page" id="page-7">
     <div class="doc-header">
       <img src="assets/img/franchise-liquid-green-logo-transparent.png" alt="Liquid Green Franchising">
       <span class="kit-id">The Process &middot; Page 7 of 8</span>
@@ -1148,7 +1196,7 @@
   <!-- ============================================================== -->
   <!-- PAGE 7 — NEXT STEPS & CONTACT                                   -->
   <!-- ============================================================== -->
-  <div class="doc-page" id="page-7">
+  <div class="doc-page" id="page-8">
     <div class="doc-header">
       <img src="assets/img/franchise-liquid-green-logo-transparent.png" alt="Liquid Green Franchising">
       <span class="kit-id">Next Steps &middot; Page 8 of 8</span>
@@ -1223,7 +1271,7 @@
       <a href="assets/docs/spray-liquid-green-franchise-kit.pdf" class="btn outline" download>Download as PDF</a>
       <a href="franchising.html" class="btn outline">Back to Franchising</a>
     </div>
-    <div class="kit-meta">Document version 1.0 &middot; Last updated July 17, 2026</div>
+    <div class="kit-meta">Document version 1.1 &middot; Last updated July 17, 2026</div>
   </div>
 </section>
 
