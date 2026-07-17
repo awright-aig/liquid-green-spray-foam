@@ -34,7 +34,7 @@ button,input,textarea,select{font:inherit}
 /* --- HOVER SYSTEM: one consistent interaction site-wide --- */
 .hoverable,.btn,.nav-link,.dropdown a,.card,.carousel-arrow,.dot,.footer a,.mobile-toggle,.social,summary,.gallery-item,.faq-item,.benefit-icon,.step-num,.map-pin,.territory-card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease;will-change:transform}
 .hoverable:hover,.btn:hover,.nav-link:hover,.dropdown a:hover,.card:hover,.carousel-arrow:hover,.dot:hover,.footer a:hover,.mobile-toggle:hover,.social:hover,summary:hover,.gallery-item:hover,.faq-item:hover,.benefit-icon:hover,.step-num:hover,.map-pin:hover,.territory-card:hover,.hoverable:focus-visible,.btn:focus-visible,.nav-link:focus-visible,.dropdown a:focus-visible,.card:focus-within,.carousel-arrow:focus-visible,.dot:focus-visible,.footer a:focus-visible,.mobile-toggle:focus-visible,.social:focus-visible,summary:focus-visible,.gallery-item:focus-visible,.faq-item:focus-visible{transform:var(--hover-transform);box-shadow:var(--hover-shadow);border-color:var(--hover-border);outline:none}
-.hoverable:hover,.card:hover,.benefit:hover,.territory-card:hover,.faq-item:hover,.gallery-item:hover{background:linear-gradient(135deg,rgba(172,209,85,.12) 0%,rgba(80,80,80,.08) 100%);border-color:rgba(172,209,85,.4)}
+.hoverable:hover,.card:hover,.benefit:hover,.territory-card:hover,.faq-item:hover,.gallery-item:hover{background:linear-gradient(135deg,rgba(172,209,85,.22) 0%,rgba(129,56,183,.22) 100%);border-color:rgba(129,56,183,.5)}
 
 /* --- TYPOGRAPHY (from brand guideline) --- */
 .eyebrow{font-family:'Raleway',sans-serif;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--lime);margin-bottom:14px;display:flex;align-items:center;gap:12px}.eyebrow::before{content:"";width:30px;height:2px;background:var(--lime)}
@@ -50,11 +50,11 @@ p,.body-text{font-family:'Poppins',sans-serif;font-weight:400;font-size:15px;lin
 
 /* --- BUTTONS --- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 28px;border:2px solid var(--lime);border-radius:0;background:var(--lime);color:var(--dark);font-family:'Raleway',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.btn:hover{background:var(--lime-bright);border-color:var(--lime-bright)}
+.btn:hover{background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);border-color:transparent;color:#fff;box-shadow:0 8px 24px rgba(129,56,183,.35)}
 .btn.outline{background:transparent;color:var(--lime)}
-.btn.outline:hover{background:var(--lime);color:var(--dark)}
+.btn.outline:hover{background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(129,56,183,.35)}
 .btn.purple{background:var(--purple);border-color:var(--purple);color:#fff}
-.btn.purple:hover{background:var(--lavender);border-color:var(--lavender)}
+.btn.purple:hover{background:linear-gradient(135deg,var(--purple) 0%,var(--lime) 100%);border-color:transparent;color:#fff;box-shadow:0 8px 24px rgba(129,56,183,.4)}
 .btn.full{width:100%}
 
 /* --- HEADER: transparent over hero, solid on scroll --- */
@@ -172,7 +172,7 @@ p,.body-text{font-family:'Poppins',sans-serif;font-weight:400;font-size:15px;lin
 /* --- TESTIMONIAL CARDS (grid) --- */
 .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .testimonial-card{display:flex;flex-direction:column;border:1px solid rgba(172,209,85,.18);background:rgba(255,255,255,.04);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
-.testimonial-card:hover,.testimonial-card:focus-within{transform:translateY(-6px);border-color:var(--lime);box-shadow:0 16px 40px rgba(172,209,85,.18);background:linear-gradient(135deg,rgba(172,209,85,.1) 0%,rgba(80,80,80,.05) 100%)}
+.testimonial-card:hover,.testimonial-card:focus-within{transform:translateY(-6px);border-color:rgba(129,56,183,.5);box-shadow:0 16px 40px rgba(129,56,183,.25);background:linear-gradient(135deg,rgba(172,209,85,.22) 0%,rgba(129,56,183,.22) 100%)}
 .testimonial-card .testimonial-img{width:100%;height:180px;object-fit:cover;display:block;background:#000}
 .testimonial-card .testimonial-body{padding:22px;flex:1;display:flex;flex-direction:column}
 .testimonial-card .stars{color:var(--lime);font-size:15px;letter-spacing:2px;margin-bottom:12px;line-height:1}
@@ -188,6 +188,8 @@ p,.body-text{font-family:'Poppins',sans-serif;font-weight:400;font-size:15px;lin
 .accordion{display:grid;gap:10px}
 details{border:1px solid rgba(172,209,85,.18);background:rgba(255,255,255,.03);overflow:hidden}
 summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:'Raleway',sans-serif;font-weight:600;font-size:14px;color:var(--white);text-transform:uppercase;letter-spacing:.08em;border:1px solid transparent;display:flex;justify-content:space-between;align-items:center}
+.accordion summary:hover,details:hover,details[open] summary{background:linear-gradient(135deg,rgba(172,209,85,.15) 0%,rgba(129,56,183,.18) 100%);border-color:rgba(129,56,183,.4)}
+.accordion details[open]{border-color:rgba(129,56,183,.5)}
 summary::-webkit-details-marker{display:none}
 summary::after{display:none}
 details[open] summary::after{display:none}
