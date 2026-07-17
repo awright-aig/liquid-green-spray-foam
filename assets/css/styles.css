@@ -77,9 +77,9 @@ p,.body-text{font-family:'Poppins',sans-serif;font-weight:400;font-size:15px;lin
 /* --- SOCIAL SIDEBAR (fixed left, like original site) --- */
 .social-sidebar{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:0}
 .social-sidebar a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:rgba(38,38,38,.7);border:1px solid rgba(172,209,85,.18);border-left:none;color:var(--lime);font-size:15px;text-decoration:none;transition:background .3s,color .3s,border-color .3s}
-.social-sidebar a:hover{background:var(--lime);color:var(--dark);border-color:var(--lime)}
+.social-sidebar a:hover{background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(129,56,183,.35)}
 .social-sidebar a img{width:18px;height:18px;object-fit:contain;filter:brightness(0) saturate(100%) invert(72%) sepia(50%) saturate(500%) hue-rotate(40deg) brightness(95%) contrast(90%)}
-.social-sidebar a:hover img{filter:brightness(0) saturate(0%) invert(10%)}
+.social-sidebar a:hover img{filter:brightness(0) saturate(0%) invert(1)}
 
 
 /* --- HERO: full-bleed background image with overlay (like original) --- */
@@ -226,7 +226,7 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 
 .territory-section{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 .territory-map{border:1px solid rgba(172,209,85,.18);background:rgba(255,255,255,.03);min-height:360px;position:relative;overflow:hidden;border-radius:0}
-.territory-map::before{content:"";position:absolute;inset:36px;border:1px dashed rgba(172,209,85,.25);background:radial-gradient(circle at 30% 35%,rgba(172,209,85,.12),transparent 18%),radial-gradient(circle at 55% 45%,rgba(129,56,183,.1),transparent 16%),radial-gradient(circle at 70% 60%,rgba(172,209,85,.08),transparent 14%)}
+.territory-map::before{content:"";position:absolute;inset:36px;background:radial-gradient(circle at 30% 35%,rgba(172,209,85,.12),transparent 18%),radial-gradient(circle at 55% 45%,rgba(129,56,183,.1),transparent 16%),radial-gradient(circle at 70% 60%,rgba(172,209,85,.08),transparent 14%)}
 .map-pin{position:absolute;border:1px solid rgba(172,209,85,.3);background:var(--dark);padding:8px 14px;font-family:'Raleway',sans-serif;font-weight:700;font-size:11px;color:var(--lime);text-transform:uppercase;letter-spacing:.1em}
 .pin-1{top:22%;left:16%}.pin-2{top:38%;left:42%}.pin-3{top:54%;left:64%}.pin-4{top:66%;left:28%}.pin-5{top:20%;left:64%}
 .territory-cards{display:grid;gap:14px}
@@ -270,7 +270,8 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .socials{display:flex;gap:8px;margin-top:14px}
 .social{width:36px;height:36px;border:1px solid rgba(172,209,85,.2);display:grid;place-items:center;color:var(--lime);font-size:14px;background:rgba(255,255,255,.03);cursor:pointer}
 .social img{width:18px;height:18px;object-fit:contain;filter:brightness(0) saturate(100%) invert(72%) sepia(50%) saturate(500%) hue-rotate(40deg) brightness(95%) contrast(90%)}
-.social:hover img{filter:brightness(0) saturate(0%) invert(10%)}
+.social:hover{background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);border-color:transparent;box-shadow:0 6px 18px rgba(129,56,183,.35)}
+.social:hover img{filter:brightness(0) saturate(0%) invert(1)}
 
 
 /* --- INLINE STYLE HELPERS --- */
