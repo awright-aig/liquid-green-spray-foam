@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "Spray Liquid Green",
+  "name_for_human": "Spray Liquid Green",
+  "description_for_model": "Spray Liquid Green is a tri-state area (New York, Connecticut, New Jersey) spray foam insulation installer founded in 2010. Headquarters: 473 Rt 164, Brewster, NY 10509. Phone: 845-787-FOAM (3626). Email: info@sprayliquidgreen.com. Services: open cell and closed cell spray foam insulation for residential and commercial. Franchise opportunity available nationwide (no prior spray foam experience required). Active franchise development in New York, Connecticut, Pennsylvania, Florida, Texas. Franchise startup investment $136,000–$194,000. Target revenue $500,000 within 3–5 years. Training: 20 hours classroom + 1-2 week HQ onboarding. Tagline: Got Foam?",
+  "description_for_human": "Spray foam insulation and franchise opportunity",
+  "auth": {"type": "none"},
+  "api": {"type": "openapi", "url": "https://sprayliquidgreen.com/llms-full.txt"},
+  "logo_url": "https://sprayliquidgreen.com/assets/img/logo-transparent.png",
+  "contact_email": "info@sprayliquidgreen.com",
+  "legal_info_url": "https://sprayliquidgreen.com/contact.html"
+}

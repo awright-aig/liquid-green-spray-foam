@@ -234,6 +234,17 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .territory-card h3{font-size:16px;margin-bottom:4px}
 .territory-card p{font-size:13px;color:var(--offwhite)}
 
+/* --- NO EXPERIENCE BANNER (first-time franchisees emphasis) --- */
+.no-exp-banner{position:relative;padding:48px 24px;border:1px solid rgba(172,209,85,.25);border-radius:16px;background:linear-gradient(135deg,rgba(172,209,85,.08) 0%,rgba(129,56,183,.18) 100%);overflow:hidden;isolation:isolate}
+.no-exp-banner::before{content:"";position:absolute;top:-30%;right:-15%;width:55%;height:160%;background:radial-gradient(ellipse at center,rgba(129,56,183,.35) 0%,transparent 65%);z-index:-1;pointer-events:none}
+.no-exp-banner::after{content:"";position:absolute;bottom:-40%;left:-10%;width:50%;height:160%;background:radial-gradient(ellipse at center,rgba(172,209,85,.25) 0%,transparent 65%);z-index:-1;pointer-events:none}
+.no-exp-inner{text-align:center;position:relative;z-index:1}
+.no-exp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:780px;margin:0 auto}
+.no-exp-stat{padding:20px 14px;border:1px solid rgba(172,209,85,.3);background:rgba(10,10,10,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center;transition:transform .3s,border-color .3s,background .3s,box-shadow .3s}
+.no-exp-stat strong{display:block;font-family:'Oswald',sans-serif;font-size:30px;color:var(--lime);text-transform:uppercase;letter-spacing:.04em;line-height:1;margin-bottom:6px}
+.no-exp-stat span{font-size:11px;color:var(--offwhite);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+.no-exp-stat:hover{border-color:rgba(129,56,183,.6);background:linear-gradient(135deg,rgba(172,209,85,.18) 0%,rgba(129,56,183,.22) 100%);box-shadow:0 8px 24px rgba(129,56,183,.25)}
+
 /* --- PAGE HERO (for inner pages with bg image) --- */
 .page-hero{position:relative;padding:140px 0 60px;background:var(--dark);border-bottom:1px solid rgba(172,209,85,.1);overflow:hidden}
 .page-hero .hero-bg{position:absolute;inset:0;z-index:1}
@@ -263,10 +274,12 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .footer a:hover{color:var(--lime)}
 .footer-bottom{border-top:1px solid rgba(172,209,85,.1);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-bottom p{font-size:12px;color:var(--offwhite)}
-.footer-credit{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--offwhite);text-decoration:none;transition:color .3s}
-.footer-credit:hover{color:var(--lime)}
-.footer-credit img{height:22px;width:auto;opacity:.75;transition:opacity .3s;object-fit:contain}
-.footer-credit:hover img{opacity:1}
+.footer-credit{position:relative;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--offwhite);text-decoration:none;transition:color .3s;padding:4px 8px;border-radius:4px;overflow:hidden;isolation:isolate}
+.footer-credit::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);opacity:0;transition:opacity .3s ease;z-index:-1}
+.footer-credit:hover{color:#fff}
+.footer-credit:hover::before{opacity:1}
+.footer-credit img{height:22px;width:auto;opacity:.75;transition:opacity .3s,filter .3s;object-fit:contain}
+.footer-credit:hover img{opacity:1;filter:brightness(0) saturate(0%) invert(1)}
 .socials{display:flex;gap:8px;margin-top:14px}
 .social{width:36px;height:36px;border:1px solid rgba(172,209,85,.2);display:grid;place-items:center;color:var(--lime);font-size:14px;background:rgba(255,255,255,.03);cursor:pointer}
 .social img{width:18px;height:18px;object-fit:contain;filter:brightness(0) saturate(100%) invert(72%) sepia(50%) saturate(500%) hue-rotate(40deg) brightness(95%) contrast(90%)}
@@ -316,6 +329,7 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
   .section,.section-alt{padding:60px 0}
   .hero-content{padding:80px 16px 40px}
   .stat-row,.grid.two,.grid.three,.grid.four,.benefits-grid,.form-row,.footer-grid,.contact-row,.territory-section{grid-template-columns:1fr}
+  .no-exp-stats{grid-template-columns:1fr 1fr}
   .carousel .card{flex-basis:100%}
   .hero-actions{flex-direction:column}
   .hero-actions .btn{width:100%}

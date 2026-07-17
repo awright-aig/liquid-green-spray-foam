@@ -1,0 +1,33 @@
+{
+  "name": "Spray Liquid Green",
+  "short_name": "Liquid Green",
+  "description": "Spray foam insulation installer and franchise opportunity. New York, Connecticut, New Jersey. Nationwide franchise territories available.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/img/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "construction", "home-improvement"],
+  "lang": "en-US"
+}
