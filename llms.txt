@@ -4,17 +4,17 @@
 
 ## Core Pages
 - [Home](https://sprayliquidgreen.com/): Spray foam insulation overview, hero, services intro
-- [About](https://sprayliquidgreen.com/about.html): Company history, mission, team, "Got Foam?" tagline
-- [Products](https://sprayliquidgreen.com/products.html): Open cell and closed cell spray foam details
-- [Industries](https://sprayliquidgreen.com/industries.html): Residential, commercial, agricultural, industrial, institutional
-- [Why Liquid Green](https://sprayliquidgreen.com/why-spray-liquid-green.html): Spray foam vs fiberglass vs cellulose benefits
-- [Testimonials](https://sprayliquidgreen.com/testimonials.html): Customer reviews and case studies
-- [Contact](https://sprayliquidgreen.com/contact.html): Phone, email, address, hours, service area
+- [About](https://sprayliquidgreen.com/about): Company history, mission, team, "Got Foam?" tagline
+- [Products](https://sprayliquidgreen.com/products): Open cell and closed cell spray foam details
+- [Industries](https://sprayliquidgreen.com/industries): Residential, commercial, agricultural, industrial, institutional
+- [Why Liquid Green](https://sprayliquidgreen.com/why-spray-liquid-green): Spray foam vs fiberglass vs cellulose benefits
+- [Testimonials](https://sprayliquidgreen.com/testimonials): Customer reviews and case studies
+- [Contact](https://sprayliquidgreen.com/contact): Phone, email, address, hours, service area
 
 ## Franchise
-- [Franchising](https://sprayliquidgreen.com/franchising.html): Franchise opportunity. $136k–$194k startup, $500k revenue target in 3–5 years, 20-hour training, 1–2 week HQ onboarding, **no prior spray foam experience required**, territories available nationwide, mobile business model, protected territory, CRM included
+- [Franchising](https://sprayliquidgreen.com/franchising): Franchise opportunity. $136k–$194k startup, $500k revenue target in 3–5 years, 20-hour training, 1–2 week HQ onboarding, **no prior spray foam experience required**, territories available nationwide, mobile business model, protected territory, CRM included
 - [Franchise Kit (PDF)](https://sprayliquidgreen.com/assets/docs/spray-liquid-green-franchise-kit.pdf): 8-page downloadable franchise kit (operations, marketing, training, financials, territory map)
-- [Franchise Brochure](https://sprayliquidgreen.com/franchise-brochure.html): 2-page franchise marketing brochure (Why Join, About Us, Training, Industry Outlook, Contact) — viewable online or downloadable as PDF
+- [Franchise Brochure](https://sprayliquidgreen.com/franchise-brochure): 2-page franchise marketing brochure (Why Join, About Us, Training, Industry Outlook, Contact) — viewable online or downloadable as PDF
 
 ## Company Facts
 - Legal name: Spray Liquid Green
