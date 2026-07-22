@@ -389,6 +389,20 @@
   </div>
 </section>
 
+<section class="section" id="territories" aria-labelledby="terr-heading">
+  <div class="container">
+    <div class="eyebrow reveal">Territories</div>
+    <h2 id="terr-heading" class="reveal">Click Your State to File an Application</h2>
+    <p class="lead" style="text-align:center;max-width:720px;margin:24px auto 20px">Hover or tap any state to see territory availability. Click a state to start your franchise application for that market.</p>
+    <div class="us-map-wrapper" id="us-map-wrapper" aria-label="US franchise territory map. Click any state to apply for that territory.">
+      <div id="us-map-loading" class="us-map-loading">Loading map&hellip;</div>
+    </div>
+    <p class="us-map-hint" id="us-map-hint" aria-live="polite"></p>
+  </div>
+</section>
+
+
+
 <section class="section">
   <div class="container">
     <div class="split">
@@ -513,39 +527,7 @@
   </div>
 </section>
 
-<section class="section-alt">
-  <div class="container">
-    <div class="eyebrow reveal">Territories</div>
-    <h2 class="reveal">Available Nationwide</h2>
-    <p class="lead" style="text-align:center;max-width:720px;margin:24px auto 32px">Liquid Green is expanding across the United States. Tell us where you want to build, and we&rsquo;ll work with you to define a protected territory that fits your market.</p>
-    <div class="territory-section" style="margin-top:28px">
-      <div class="territory-map" style="text-align:center;padding:32px 24px;background:rgba(129,56,183,.12);border:1px solid var(--purple);border-radius:12px;margin-bottom:32px">
-        <p class="lavender-label" style="margin:0 0 6px 0;font-size:13px;letter-spacing:.14em">FRANCHISE TERRITORIES</p>
-        <h3 style="margin:0 0 20px 0;font-size:24px;color:var(--lime)">Now Accepting Applications Nationwide</h3>
-        <img src="assets/img/us-map.svg" alt="US map showing Liquid Green franchise territories &mdash; actively developing in New York, Connecticut, Pennsylvania, Florida, and Texas; other states available upon inquiry" style="width:100%;max-width:640px;height:auto;display:block;margin:0 auto">
-        <p style="margin:20px auto 0;max-width:640px;color:rgba(255,255,255,.85);font-size:16px;line-height:1.5">Liquid Green is <strong>actively developing franchising in New York, Connecticut, Pennsylvania, Florida, and Texas</strong>. Other states are available upon inquiry &mdash; tell us where you want to build and we&rsquo;ll work with you to define a protected territory.</p>
-        <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:20px;font-size:13px">
-          <span style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.85)"><span style="width:18px;height:14px;background:linear-gradient(180deg,#ACD155 0%,#8138B7 100%);border:1.5px solid #fff;border-radius:2px;display:inline-block"></span>Actively developing</span>
-          <span style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.85)"><span style="width:18px;height:14px;background:transparent;border:1.5px solid #fff;border-radius:2px;display:inline-block"></span>Available upon inquiry</span>
-        </div>
-      </div>
-      <div class="territory-cards">
-        <div class="territory-card hoverable">
-          <h3>Our Current Footprint</h3>
-          <p>Hudson Valley, NY (home base), the Tri-State Metro, New England, the Mid-Atlantic, and New York&rsquo;s Capital Region. Established brand presence, strong builder relationships, and a proven track record.</p>
-        </div>
-        <div class="territory-card hoverable">
-          <h3>Now Accepting Applications</h3>
-          <p>All other U.S. markets. Tell us where you want to build, and we&rsquo;ll confirm availability and define your protected territory.</p>
-        </div>
-        <div class="territory-card hoverable">
-          <h3>How Territories Are Defined</h3>
-          <p>Territories are exclusive and protected, scoped by population, demand, and proximity to other franchisees. We&rsquo;ll work with you to draw the lines that make sense for your market.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section">
   <div class="container" style="max-width:700px">
@@ -769,6 +751,79 @@
         form.scrollIntoView({behavior: 'smooth', block: 'center'});
       }
     }
+  })();
+</script>
+<!-- US Map inline loader + hover/click effects -->
+<script>
+  (function() {
+    var wrapper = document.getElementById('us-map-wrapper');
+    var hint = document.getElementById('us-map-hint');
+    if (!wrapper) return;
+
+    fetch('assets/img/us-map.svg')
+      .then(function(r) { return r.text(); })
+      .then(function(svgText) {
+        // Parse the SVG and inject it inline
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(svgText, 'image/svg+xml');
+        var svg = doc.querySelector('svg');
+        if (!svg) return;
+        // Make the SVG responsive
+        svg.removeAttribute('width');
+        svg.removeAttribute('height');
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+        svg.classList.add('us-map-svg');
+        wrapper.innerHTML = '';
+        wrapper.appendChild(svg);
+
+        // Add hover and click handlers to each state path
+        var states = wrapper.querySelectorAll('.state-path');
+        states.forEach(function(path) {
+          var code = path.getAttribute('data-state');
+          var name = path.getAttribute('data-name') || code;
+          // Update title for tooltip
+          var title = path.querySelector('title');
+          if (title) {
+            title.textContent = name + ' — Click to apply for this territory';
+          } else {
+            var t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+            t.textContent = name + ' — Click to apply for this territory';
+            path.insertBefore(t, path.firstChild);
+          }
+          // Add tabindex for keyboard accessibility
+          path.setAttribute('tabindex', '0');
+          path.setAttribute('role', 'button');
+          path.setAttribute('aria-label', name + ' — click to apply for franchise territory');
+
+          // Hover hint in the page
+          path.addEventListener('mouseenter', function() {
+            if (hint) hint.textContent = 'File application for ' + name + ', and we will email you what territories are available →';
+          });
+          path.addEventListener('mouseleave', function() {
+            if (hint) hint.textContent = '';
+          });
+          path.addEventListener('focus', function() {
+            if (hint) hint.textContent = 'File application for ' + name + ', and we will email you what territories are available →';
+          });
+          path.addEventListener('blur', function() {
+            if (hint) hint.textContent = '';
+          });
+
+          // Click → go to franchise kit
+          path.addEventListener('click', function() {
+            window.location.href = 'franchise-kit?state=' + code + '&name=' + encodeURIComponent(name);
+          });
+          path.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              window.location.href = 'franchise-kit?state=' + code + '&name=' + encodeURIComponent(name);
+            }
+          });
+        });
+      })
+      .catch(function(err) {
+        wrapper.innerHTML = '<p style="text-align:center;color:#fff;padding:40px">Map could not be loaded. Please use the franchise form below to inquire about territories.</p>';
+      });
   })();
 </script>
 </body>

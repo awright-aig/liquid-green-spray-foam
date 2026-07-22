@@ -305,6 +305,15 @@
   gap: 24px;
   margin-top: 24px;
 }
+.sig-canvas {
+  width: 100%;
+  height: 80px;
+  border: 1px dashed #999;
+  background: #fff;
+  cursor: crosshair;
+  display: block;
+  touch-action: none;
+}
 .sig-block {
   border-bottom: 1px solid #999;
   height: 36px;
@@ -589,6 +598,7 @@
         <input type="hidden" name="apiKey" value="sf_af139c4436d00c73a9459b77">
         <input type="hidden" name="subject" value="Franchise Application Part 1 (Applicant Info) from sprayliquidgreen.com">
         <input type="hidden" name="replyTo" value="email">
+        <input type="hidden" name="cc" value="email">
         <input type="hidden" name="redirectTo" value="https://sprayliquidgreen.com/franchise-kit?success=1#page-2">
         <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
         <h2>1. Applicant Information</h2>
@@ -783,6 +793,7 @@
         <input type="hidden" name="apiKey" value="sf_af139c4436d00c73a9459b77">
         <input type="hidden" name="subject" value="Franchise Application Part 2 (Experience + Signature) from sprayliquidgreen.com">
         <input type="hidden" name="replyTo" value="email">
+        <input type="hidden" name="cc" value="email">
         <input type="hidden" name="redirectTo" value="https://sprayliquidgreen.com/franchise-kit?success=2#page-final">
         <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-grid">
@@ -849,12 +860,16 @@
 
         <div class="sig-row">
           <div>
-            <div class="sig-block"></div>
-            <span class="caption" style="font-size:9pt;color:#666">Signature</span>
+            <canvas id="sigCanvas" class="sig-canvas" width="500" height="80" aria-label="Signature pad. Use mouse or touch to draw your signature."></canvas>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+              <span class="caption" style="font-size:9pt;color:#666">Applicant Signature</span>
+              <button type="button" id="sigClear" style="background:transparent;border:1px solid #999;color:#666;font-size:8pt;padding:2px 8px;cursor:pointer;border-radius:3px">Clear</button>
+            </div>
+            <input type="hidden" name="signature" id="sigData">
           </div>
           <div>
-            <div class="sig-block"></div>
-            <span class="caption" style="font-size:9pt;color:#666">Date</span>
+            <input type="date" id="sigDate" name="applicationDate" style="width:100%;padding:8px;border:1px solid #ccc;font-size:10pt;font-family:inherit;border-radius:2px" required>
+            <span class="caption" style="font-size:9pt;color:#666;display:block;margin-top:2px">Date</span>
           </div>
         </div>
 
@@ -1365,10 +1380,122 @@
     } else if (s === '2') {
       var f2 = document.getElementById('kit-form-2');
       if (f2) {
-        f2.innerHTML = '<div class="form-success" role="status" aria-live="polite" style="text-align:center;padding:30px 20px"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px;color:#222">Application Submitted</h3><p style="margin:0;color:#555;font-size:15px;line-height:1.55">Thanks for applying. Your complete application has been sent to <strong>franchise@sprayliquidgreen.com</strong>. We\'ll review it and reach out within 2 business days to schedule a discovery call.</p></div>';
+        f2.innerHTML = '<div class="form-success" role="status" aria-live="polite" style="text-align:center;padding:30px 20px"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px;color:#222">Application Submitted</h3><p style="margin:0;color:#555;font-size:15px;line-height:1.55">Thanks for applying. Your complete application has been sent to <strong>franchise@sprayliquidgreen.com</strong> and a copy has been CC\'d to your email. We\'ll review it and reach out within 2 business days to schedule a discovery call.</p></div>';
       }
     }
   })();
+</script>
+<!-- Signature pad + state pre-fill from URL params + form signature on submit -->
+<script>
+(function() {
+  // Pre-fill state from URL params (came from map click)
+  var params = new URLSearchParams(window.location.search);
+  var state = params.get('state');
+  var name = params.get('name');
+  if (state) {
+    // Find the preferred territory select and set it
+    var terrSelects = document.querySelectorAll('select[name="territory"]');
+    terrSelects.forEach(function(sel) {
+      // Add option if not present
+      var optText = state + (name ? ' — ' + name : '');
+      var found = false;
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === state || sel.options[i].text.indexOf(state) === 0) { found = true; break; }
+      }
+      if (!found) {
+        var opt = document.createElement('option');
+        opt.value = state;
+        opt.text = optText;
+        opt.selected = true;
+        sel.insertBefore(opt, sel.firstChild);
+      }
+    });
+    // Show a banner at the top of the form
+    var f1 = document.getElementById('kit-form-1');
+    if (f1) {
+      var banner = document.createElement('div');
+      banner.style.cssText = 'background:linear-gradient(135deg,rgba(172,209,85,.15),rgba(129,56,183,.15));border:1px solid #8138B7;border-radius:6px;padding:12px 16px;margin-bottom:16px;font-size:11pt;color:#222';
+      banner.innerHTML = '<strong style="color:#8138B7">Territory selected:</strong> ' + (name || state) + ' (' + state + '). Filing for this state — we\'ll email you the specific territories available.';
+      f1.insertBefore(banner, f1.firstChild);
+    }
+  }
+
+  // Set today's date by default
+  var dateInput = document.getElementById('sigDate');
+  if (dateInput && !dateInput.value) {
+    var today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+  }
+
+  // Signature pad
+  var canvas = document.getElementById('sigCanvas');
+  var sigData = document.getElementById('sigData');
+  var clearBtn = document.getElementById('sigClear');
+  if (!canvas) return;
+
+  var ctx = canvas.getContext('2d');
+  var drawing = false;
+  var lastX = 0, lastY = 0;
+  var hasSignature = false;
+
+  function getPos(e) {
+    var rect = canvas.getBoundingClientRect();
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: (clientX - rect.left) * scaleX, y: (clientY - rect.top) * scaleY };
+  }
+
+  function start(e) {
+    e.preventDefault();
+    drawing = true;
+    var p = getPos(e);
+    lastX = p.x; lastY = p.y;
+  }
+  function move(e) {
+    if (!drawing) return;
+    e.preventDefault();
+    var p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(p.x, p.y);
+    ctx.strokeStyle = '#111';
+    ctx.lineWidth = 2.5;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+    lastX = p.x; lastY = p.y;
+    hasSignature = true;
+  }
+  function end() { drawing = false; }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', move);
+  canvas.addEventListener('mouseup', end);
+  canvas.addEventListener('mouseleave', end);
+  canvas.addEventListener('touchstart', start, { passive: false });
+  canvas.addEventListener('touchmove', move, { passive: false });
+  canvas.addEventListener('touchend', end);
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hasSignature = false;
+      if (sigData) sigData.value = '';
+    });
+  }
+
+  // On form submit, capture signature data
+  var f2 = document.getElementById('kit-form-2');
+  if (f2) {
+    f2.addEventListener('submit', function() {
+      if (sigData && hasSignature) {
+        sigData.value = canvas.toDataURL('image/png');
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>

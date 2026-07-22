@@ -247,6 +247,14 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .no-exp-stat span{font-size:11px;color:var(--offwhite);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
 .no-exp-stat:hover{border-color:rgba(129,56,183,.6);background:linear-gradient(135deg,rgba(172,209,85,.18) 0%,rgba(129,56,183,.22) 100%);box-shadow:0 8px 24px rgba(129,56,183,.25)}
 
+/* --- US FRANCHISE TERRITORY MAP (interactive) --- */
+.us-map-wrapper{position:relative;max-width:960px;margin:0 auto;background:transparent;padding:0}
+.us-map-svg{width:100%;height:auto;display:block}
+.us-map-loading{text-align:center;color:rgba(255,255,255,.6);padding:60px 20px;font-size:14px}
+.us-map-hint{text-align:center;color:var(--lime);font-size:14px;min-height:20px;margin-top:14px;font-weight:600;letter-spacing:.01em}
+.us-map-svg .state-path{fill:transparent!important;stroke:#fff;stroke-width:1.2;cursor:pointer;transition:transform .25s ease,fill .25s ease,stroke .25s ease,filter .25s ease;transform-origin:center;transform-box:fill-box;outline:none}
+.us-map-svg .state-path:hover,.us-map-svg .state-path:focus-visible{fill:rgba(172,209,85,.35)!important;stroke:var(--lime);stroke-width:2;transform:scale(1.4);filter:drop-shadow(0 0 8px rgba(172,209,85,.6));z-index:10}
+.us-map-svg .state-path:active{fill:rgba(129,56,183,.45)!important;stroke:var(--purple);stroke-width:2.5;transform:scale(1.5)}
 /* --- GOOGLE REVIEW SECTION (GBP ask-for-review CTA) --- */
 .greview-section{padding:60px 0;border-top:1px solid rgba(172,209,85,.15);border-bottom:1px solid rgba(172,209,85,.15);background:linear-gradient(135deg,rgba(255,255,255,.02) 0%,rgba(172,209,85,.04) 100%)}
 .greview-card{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between;padding:36px 40px;border:1px solid rgba(172,209,85,.22);border-radius:14px;background:rgba(10,10,10,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;overflow:hidden;isolation:isolate}
