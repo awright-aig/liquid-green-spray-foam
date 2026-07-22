@@ -23,6 +23,10 @@
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="manifest" href="manifest.json">
 <link rel="alternate" type="text/plain" href="llms.txt" title="LLMs.txt">
+<!-- Cloudflare Turnstile (bot protection) -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- Static Forms: form submission handler -->
+<script src="https://staticforms.xyz/v2/staticforms.js" async defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -581,8 +585,12 @@
       <h1>Franchise Application</h1>
       <p style="color:#555;font-size:10.5pt;margin:0 0 14px"><em>Confidential. For internal use by Liquid Green Spray Foam Insulation.</em></p>
 
-      <form action="mailto:franchise@sprayliquidgreen.com?subject=Franchise%20Application%20from%20sprayliquidgreen.com" method="POST" enctype="text/plain">
-
+      <form id="kit-form-1" action="https://api.staticforms.xyz/submit" method="POST">
+        <input type="hidden" name="apiKey" value="sf_af139c4436d00c73a9459b77">
+        <input type="hidden" name="subject" value="Franchise Application Part 1 (Applicant Info) from sprayliquidgreen.com">
+        <input type="hidden" name="replyTo" value="email">
+        <input type="hidden" name="redirectTo" value="https://sprayliquidgreen.com/franchise-kit.html?success=1#page-2">
+        <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
         <h2>1. Applicant Information</h2>
         <div class="form-grid">
           <div class="field">
@@ -748,7 +756,11 @@
           </div>
         </div>
 
-        <p style="font-size:9pt;color:#666;margin:8px 0 0;text-align:right"><em>Continued on the next page &rarr;</em></p>
+        <p style="font-size:9pt;color:#666;margin:8px 0 14px;text-align:right"><em>Continued on the next page &rarr;</em></p>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADuAYBTzote8usn4" data-callback="onKitTurnstile1Success" style="margin:14px auto 12px"></div>
+        <div style="text-align:right;margin-bottom:8px">
+          <button type="submit" class="btn purple" id="kit-submit-1" style="background:#8138B7;color:#fff;padding:12px 28px;font-family:Oswald,system-ui,sans-serif;font-size:10pt;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer">Save &amp; Continue ↓</button>
+        </div>
       </form>
     </div>
     <div class="doc-footer">
@@ -767,7 +779,12 @@
     </div>
     <div class="doc-body">
       <h2>5. Experience &amp; Readiness (continued)</h2>
-      <form action="mailto:franchise@sprayliquidgreen.com?subject=Franchise%20Application%20from%20sprayliquidgreen.com" method="POST" enctype="text/plain">
+      <form id="kit-form-2" action="https://api.staticforms.xyz/submit" method="POST">
+        <input type="hidden" name="apiKey" value="sf_af139c4436d00c73a9459b77">
+        <input type="hidden" name="subject" value="Franchise Application Part 2 (Experience + Signature) from sprayliquidgreen.com">
+        <input type="hidden" name="replyTo" value="email">
+        <input type="hidden" name="redirectTo" value="https://sprayliquidgreen.com/franchise-kit.html?success=2#page-final">
+        <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-grid">
           <div class="field">
             <label for="yearsExp">Years of relevant work experience <span class="req">*</span></label>
@@ -842,8 +859,9 @@
         </div>
 
         <div style="margin-top:32px;text-align:center">
-          <button type="submit" class="btn purple" style="background:#8138B7;color:#fff;padding:12px 32px;font-family:Oswald,system-ui,sans-serif;font-size:11pt;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer">Submit Application</button>
-          <p style="font-size:9pt;color:#777;margin:12px 0 0">Submitting opens your mail client addressed to <strong>franchise@sprayliquidgreen.com</strong>.</p>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADuAYBTzote8usn4" data-callback="onKitTurnstile2Success" style="margin:14px auto 12px"></div>
+          <button type="submit" class="btn purple" id="kit-submit-2" style="background:#8138B7;color:#fff;padding:12px 32px;font-family:Oswald,system-ui,sans-serif;font-size:11pt;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer">Submit Application</button>
+          <p style="font-size:9pt;color:#777;margin:12px 0 0">Your application will be sent securely to <strong>franchise@sprayliquidgreen.com</strong> via Static Forms.</p>
         </div>
       </form>
     </div>
@@ -1325,5 +1343,31 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<!-- Static Forms + Turnstile integration -->
+<script>
+  window.onKitTurnstile1Success = function() {
+    var b1 = document.getElementById('kit-submit-1');
+    if (b1) { b1.disabled = false; b1.style.opacity = '1'; }
+  };
+  window.onKitTurnstile2Success = function() {
+    var b2 = document.getElementById('kit-submit-2');
+    if (b2) { b2.disabled = false; b2.style.opacity = '1'; }
+  };
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var s = params.get('success');
+    if (s === '1') {
+      var f1 = document.getElementById('kit-form-1');
+      if (f1) {
+        f1.innerHTML = '<div class="form-success" role="status" aria-live="polite" style="text-align:center;padding:30px 20px"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px;color:#222">Part 1 Saved</h3><p style="margin:0;color:#555;font-size:15px;line-height:1.55">Your applicant information is on file. Please scroll down to complete Part 2 (Experience &amp; Readiness + signature).</p><p style="margin:14px 0 0"><a href="#page-2" class="btn purple" style="background:#8138B7;color:#fff;padding:10px 24px;font-family:Oswald,system-ui,sans-serif;font-size:10pt;letter-spacing:1.5px;text-transform:uppercase;border-radius:4px;text-decoration:none;display:inline-block">Continue to Part 2 ↓</a></p></div>';
+      }
+    } else if (s === '2') {
+      var f2 = document.getElementById('kit-form-2');
+      if (f2) {
+        f2.innerHTML = '<div class="form-success" role="status" aria-live="polite" style="text-align:center;padding:30px 20px"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px;color:#222">Application Submitted</h3><p style="margin:0;color:#555;font-size:15px;line-height:1.55">Thanks for applying. Your complete application has been sent to <strong>franchise@sprayliquidgreen.com</strong>. We\'ll review it and reach out within 2 business days to schedule a discovery call.</p></div>';
+      }
+    }
+  })();
+</script>
 </body>
 </html>

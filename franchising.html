@@ -33,6 +33,10 @@
     <link rel="manifest" href="manifest.json">
     <link rel="alternate" type="text/plain" href="llms.txt" title="LLMs.txt">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js" defer></script>
+<!-- Cloudflare Turnstile (bot protection) -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- Static Forms: form submission handler -->
+<script src="https://staticforms.xyz/v2/staticforms.js" async defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -591,7 +595,14 @@
   <div class="container" style="max-width:600px">
     <div class="eyebrow reveal">Get Started</div>
     <h2 class="reveal">Franchise Inquiry Form</h2>
-    <form class="form" action="mailto:franchise@sprayliquidgreen.com?subject=Franchise%20Inquiry%20from%20sprayliquidgreen.com" method="POST" enctype="text/plain" style="margin-top:20px">
+    <form class="form" id="franchise-form-el" action="https://api.staticforms.xyz/submit" method="POST" style="margin-top:20px">
+      <!-- Static Forms required fields -->
+      <input type="hidden" name="apiKey" value="sf_af139c4436d00c73a9459b77">
+      <input type="hidden" name="subject" value="Franchise Inquiry from sprayliquidgreen.com">
+      <input type="hidden" name="replyTo" value="email">
+      <input type="hidden" name="redirectTo" value="https://sprayliquidgreen.com/franchising.html?success=1#franchise-form">
+      <!-- Honeypot spam protection (hidden from real users, bots fill it) -->
+      <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <div class="field">
           <label for="ffname">First Name</label>
@@ -640,7 +651,9 @@
           <option>$250,000+</option>
         </select>
       </div>
-      <button type="submit" class="btn purple full">Submit Franchise Inquiry</button>
+      <!-- Cloudflare Turnstile (anti-bot) -->
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADuAYBTzote8usn4" data-callback="onTurnstileSuccess" style="margin:18px auto 14px"></div>
+      <button type="submit" class="btn purple full" id="franchise-submit">Submit Franchise Inquiry</button>
     </form>
     <p style="text-align:center;margin-top:16px;font-size:13px">Or download our <a href="assets/docs/spray-liquid-green-franchise-kit.pdf" style="color:var(--lime);text-decoration:underline" download>Franchise Kit</a> for more details.</p>
     <div style="margin-top:28px;padding:20px;border:1px solid var(--purple);border-radius:8px;background:rgba(129,56,183,.08)">
@@ -738,5 +751,24 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<!-- Static Forms + Turnstile integration -->
+<script>
+  // Track Turnstile completion for the franchise form
+  window.onTurnstileSuccess = function() {
+    var btn = document.getElementById('franchise-submit');
+    if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+  };
+  // Show success message when redirected back with ?success=1
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('success') === '1') {
+      var form = document.getElementById('franchise-form-el');
+      if (form) {
+        form.innerHTML = '<div class="form-success" role="status" aria-live="polite"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px">Inquiry Received</h3><p style="margin:0;color:var(--offwhite);font-size:15px;line-height:1.55">Thanks for your interest in Liquid Green. We\'ll be in touch within one business day to walk you through the franchise model, training, territories, and next steps.</p><div style="margin-top:18px"><a href="assets/docs/spray-liquid-green-franchise-kit.pdf" class="btn outline" download>Download Franchise Kit (PDF)</a></div></div>';
+        form.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+    }
+  })();
+</script>
 </body>
 </html>

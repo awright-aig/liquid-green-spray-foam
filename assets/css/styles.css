@@ -274,6 +274,18 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
   .greview-title{font-size:19px}
 }
 
+/* --- FORM SUCCESS MESSAGE (Static Forms redirect target) --- */
+.form-success{text-align:center;padding:48px 24px;border:1px solid rgba(172,209,85,.3);border-radius:14px;background:linear-gradient(135deg,rgba(172,209,85,.06) 0%,rgba(129,56,183,.1) 100%);position:relative;overflow:hidden;isolation:isolate}
+.form-success::before{content:"";position:absolute;top:-50%;right:-15%;width:60%;height:200%;background:radial-gradient(ellipse at center,rgba(172,209,85,.18) 0%,transparent 60%);z-index:-1;pointer-events:none}
+.form-success h3{color:var(--white);font-family:'Raleway',sans-serif}
+.form-success p{color:var(--offwhite)}
+.form-success a{color:var(--lime)}
+.success-icon{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--lime) 0%,var(--purple) 100%);color:#fff;font-size:36px;font-weight:bold;margin:0 auto 18px;box-shadow:0 8px 24px rgba(129,56,183,.35)}
+
+/* --- TURNSTILE WIDGET STYLING --- */
+.cf-turnstile{margin:18px auto 14px;display:flex;justify-content:center}
+#franchise-submit:disabled,#contact-submit:disabled,#kit-submit-1:disabled,#kit-submit-2:disabled{opacity:.5;cursor:not-allowed}
+
 /* --- PAGE HERO (for inner pages with bg image) --- */
 .page-hero{position:relative;padding:140px 0 60px;background:var(--dark);border-bottom:1px solid rgba(172,209,85,.1);overflow:hidden}
 .page-hero .hero-bg{position:absolute;inset:0;z-index:1}

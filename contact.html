@@ -32,6 +32,10 @@
     <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
     <link rel="manifest" href="manifest.json">
     <link rel="alternate" type="text/plain" href="llms.txt" title="LLMs.txt">
+<!-- Cloudflare Turnstile (bot protection) -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- Static Forms: form submission handler -->
+<script src="https://staticforms.xyz/v2/staticforms.js" async defer></script>
 <!-- JSON-LD: Organization (compact reference) -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://sprayliquidgreen.com/#organization","name":"Spray Liquid Green","alternateName":"Liquid Green Spray Foam Insulation","url":"https://sprayliquidgreen.com/","logo":{"@type":"ImageObject","url":"https://sprayliquidgreen.com/assets/img/logo-transparent.png"},"foundingDate":"2010","email":"info@sprayliquidgreen.com","telephone":"+1-845-787-3626","areaServed":[{"@type":"State","name":"New York"},{"@type":"State","name":"Connecticut"},{"@type":"State","name":"New Jersey"}],"address":{"@type":"PostalAddress","streetAddress":"473 Rt 164","addressLocality":"Brewster","addressRegion":"NY","postalCode":"10509","addressCountry":"US"},"sameAs":["https://www.facebook.com/sprayliquidgreen","https://www.instagram.com/sprayliquidgreen","https://www.yelp.com/biz/spray-liquid-green-brewster-2","https://g.page/r/CYTDcQUCOAnfEBM"],"knowsAbout":["Spray Foam Insulation","Open Cell Spray Foam","Closed Cell Spray Foam","Residential Insulation","Commercial Insulation","Energy Efficiency","Class 1 Fire Rating","Building Envelope","Tri-State Area Construction"]}
@@ -136,7 +140,13 @@
       <div>
         <div class="eyebrow reveal">Send a Message</div>
         <h2 class="reveal">Request a Free Quote</h2>
-        <form class="form" action="#" method="POST" style="margin-top:20px">
+        <form class="form" id="contact-form-el" action="https://api.staticforms.xyz/submit" method="POST" style="margin-top:20px">
+          <!-- Static Forms required fields -->
+          <input type="hidden" name="apiKey" value="sf_af139c4436d00c73a9459b77">
+          <input type="hidden" name="subject" value="Free Quote Request from sprayliquidgreen.com">
+          <input type="hidden" name="replyTo" value="email">
+          <input type="hidden" name="redirectTo" value="https://sprayliquidgreen.com/contact.html?success=1#contact-form">
+          <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <div class="field">
               <label for="fname">First Name</label>
@@ -165,7 +175,9 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Tell us about your project..." rows="4"></textarea>
           </div>
-          <button type="submit" class="btn full">Submit</button>
+          <!-- Cloudflare Turnstile (anti-bot) -->
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADuAYBTzote8usn4" data-callback="onContactTurnstileSuccess" style="margin:18px auto 14px"></div>
+          <button type="submit" class="btn full" id="contact-submit">Submit</button>
         </form>
       </div>
       <div>
@@ -260,5 +272,22 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<!-- Static Forms + Turnstile integration -->
+<script>
+  window.onContactTurnstileSuccess = function() {
+    var btn = document.getElementById('contact-submit');
+    if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+  };
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('success') === '1') {
+      var form = document.getElementById('contact-form-el');
+      if (form) {
+        form.innerHTML = '<div class="form-success" role="status" aria-live="polite"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px">Message Sent</h3><p style="margin:0;color:var(--offwhite);font-size:15px;line-height:1.55">Thanks for reaching out. We\'ll get back to you within one business day with a free quote. For anything urgent, call us directly at <a href="tel:8457873626" style="color:var(--lime)">845-787-FOAM (3626)</a>.</p></div>';
+        form.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+    }
+  })();
+</script>
 </body>
 </html>
