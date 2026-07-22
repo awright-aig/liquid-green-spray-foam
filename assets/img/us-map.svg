@@ -9,6 +9,10 @@
 .separator1 {stroke:#FFFFFF; stroke-width:1.5; fill:none}
 
 </style>
+<linearGradient id="stateHoverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#ACD155" stop-opacity="0.28"/>
+  <stop offset="100%" stop-color="#8138B7" stop-opacity="0.28"/>
+</linearGradient>
 </defs>
 
 <g class="state" fill="transparent" stroke="#FFFFFF" stroke-width="1.2">

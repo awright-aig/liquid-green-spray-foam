@@ -253,7 +253,7 @@ details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
 .us-map-loading{text-align:center;color:rgba(255,255,255,.6);padding:60px 20px;font-size:14px}
 .us-map-hint{text-align:center;color:var(--purple);font-size:14px;min-height:24px;margin:18px auto 0;padding:12px 20px;border:1.5px solid var(--purple);border-radius:8px;background:rgba(129,56,183,.06);max-width:640px;font-weight:600;letter-spacing:.01em}
 .us-map-svg .state-path{fill:transparent!important;stroke:#fff;stroke-width:1.2;cursor:pointer;transition:transform .25s ease,fill .25s ease,stroke .25s ease,filter .25s ease;transform-origin:center;transform-box:fill-box;outline:none}
-.us-map-svg .state-path:hover,.us-map-svg .state-path:focus-visible{fill:rgba(172,209,85,.35)!important;stroke:var(--lime);stroke-width:2;transform:scale(1.4);filter:drop-shadow(0 0 8px rgba(172,209,85,.6));z-index:10}
+.us-map-svg .state-path:hover,.us-map-svg .state-path:focus-visible{fill:url(#stateHoverGradient)!important;stroke:var(--purple);stroke-width:2;transform:scale(1.4);filter:drop-shadow(0 0 10px rgba(129,56,183,.7));z-index:10}
 .us-map-svg .state-path:active{fill:rgba(129,56,183,.45)!important;stroke:var(--purple);stroke-width:2.5;transform:scale(1.5)}
 /* --- GOOGLE REVIEW SECTION (GBP ask-for-review CTA) --- */
 .greview-section{padding:60px 0;border-top:1px solid rgba(172,209,85,.15);border-bottom:1px solid rgba(172,209,85,.15);background:linear-gradient(135deg,rgba(255,255,255,.02) 0%,rgba(172,209,85,.04) 100%)}

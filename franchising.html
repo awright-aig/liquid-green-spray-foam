@@ -397,7 +397,7 @@
     <div class="us-map-wrapper" id="us-map-wrapper" aria-label="US franchise territory map. Click any state to apply for that territory.">
       <div id="us-map-loading" class="us-map-loading">Loading map&hellip;</div>
     </div>
-    <p class="us-map-hint" id="us-map-hint" aria-live="polite"></p>
+    <p class="us-map-hint" id="us-map-hint" aria-live="polite">Click Your State to File an Application</p>
   </div>
 </section>
 
@@ -800,13 +800,13 @@
             if (hint) hint.textContent = 'File application for ' + name + ', and we will email you what territories are available →';
           });
           path.addEventListener('mouseleave', function() {
-            if (hint) hint.textContent = '';
+            if (hint) hint.textContent = 'Click Your State to File an Application';
           });
           path.addEventListener('focus', function() {
             if (hint) hint.textContent = 'File application for ' + name + ', and we will email you what territories are available →';
           });
           path.addEventListener('blur', function() {
-            if (hint) hint.textContent = '';
+            if (hint) hint.textContent = 'Click Your State to File an Application';
           });
 
           // Click → go to franchise kit
