@@ -193,9 +193,9 @@
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Download Franchise Kit",
-      "text": "Review the complete Liquid Green Franchise Kit (8-page PDF) covering operations, marketing, training, and financials.",
-      "url": "https://sprayliquidgreen.com/assets/docs/spray-liquid-green-franchise-kit.pdf"
+      "name": "Review Franchise Kit",
+      "text": "Review the complete Liquid Green Franchise Kit (8-page document with PDF download option) covering operations, marketing, training, and financials.",
+      "url": "https://sprayliquidgreen.com/franchise-kit.html"
     },
     {
       "@type": "HowToStep",
@@ -349,7 +349,7 @@
     <p class="lead white" style="max-width:600px;margin:0 auto">Join the Liquid Green family and bring premium spray foam insulation to your market. A proven business model in a growing industry.</p>
     <div class="cta-row">
       <a href="#franchise-form" class="btn">Request Info</a>
-      <a href="assets/docs/spray-liquid-green-franchise-kit.pdf" class="btn outline" download>Download Franchise Kit</a>
+      <a href="franchise-kit.html" class="btn outline">Franchise Kit</a>
     </div>
   </div>
 </section>
@@ -655,7 +655,7 @@
       <div class="cf-turnstile" data-sitekey="0x4AAAAAADuAYBTzote8usn4" data-callback="onTurnstileSuccess" style="margin:18px auto 14px"></div>
       <button type="submit" class="btn purple full" id="franchise-submit">Submit Franchise Inquiry</button>
     </form>
-    <p style="text-align:center;margin-top:16px;font-size:13px">Or download our <a href="assets/docs/spray-liquid-green-franchise-kit.pdf" style="color:var(--lime);text-decoration:underline" download>Franchise Kit</a> for more details.</p>
+    <p style="text-align:center;margin-top:16px;font-size:13px">Or view our <a href="franchise-kit.html" style="color:var(--lime);text-decoration:underline">Franchise Kit</a> for full details.</p>
     <div style="margin-top:28px;padding:20px;border:1px solid var(--purple);border-radius:8px;background:rgba(129,56,183,.08)">
       <p class="lavender-label">FRANCHISE CONTACT</p>
       <p style="margin:6px 0"><strong style="color:var(--lime)">845-787-FOAM (3626)</strong></p>
@@ -764,7 +764,7 @@
     if (params.get('success') === '1') {
       var form = document.getElementById('franchise-form-el');
       if (form) {
-        form.innerHTML = '<div class="form-success" role="status" aria-live="polite"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px">Inquiry Received</h3><p style="margin:0;color:var(--offwhite);font-size:15px;line-height:1.55">Thanks for your interest in Liquid Green. We\'ll be in touch within one business day to walk you through the franchise model, training, territories, and next steps.</p><div style="margin-top:18px"><a href="assets/docs/spray-liquid-green-franchise-kit.pdf" class="btn outline" download>Download Franchise Kit (PDF)</a></div></div>';
+        form.innerHTML = '<div class="form-success" role="status" aria-live="polite"><div class="success-icon" aria-hidden="true">✓</div><h3 style="margin:0 0 8px;font-size:22px">Inquiry Received</h3><p style="margin:0;color:var(--offwhite);font-size:15px;line-height:1.55">Thanks for your interest in Liquid Green. We\'ll be in touch within one business day to walk you through the franchise model, training, territories, and next steps.</p><div style="margin-top:18px"><a href="franchise-kit.html" class="btn outline">View Franchise Kit</a></div></div>';
         form.scrollIntoView({behavior: 'smooth', block: 'center'});
       }
     }
