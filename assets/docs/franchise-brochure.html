@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Liquid Green Franchise Brochure</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 8.5in;
+    height: 11in;
+    padding: 0.5in;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+  .top-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #ACD155 0%, #8138B7 100%);
+    margin: -0.5in -0.5in 0.3in;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .brand {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 11pt;
+    letter-spacing: 0.15em;
+    color: #8138B7;
+    text-transform: uppercase;
+  }
+  .tagline {
+    font-size: 8pt;
+    color: #666;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+  .meta {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #888;
+    letter-spacing: 0.05em;
+  }
+  h1 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 36pt;
+    color: #8138B7;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+  h1 .accent { color: #ACD155; }
+  h2 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 18pt;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin: 18px 0 8px;
+    letter-spacing: 0.02em;
+  }
+  h2 .accent { color: #8138B7; }
+  p {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .lede {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 14px;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 16px;
+  }
+  .pull-box {
+    background: linear-gradient(135deg, rgba(172,209,85,.08) 0%, rgba(129,56,183,.12) 100%);
+    border-left: 4px solid #8138B7;
+    padding: 14px 16px;
+  }
+  .pull-box h3 {
+    font-size: 11pt;
+    color: #8138B7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  .check-list li {
+    font-size: 10pt;
+    line-height: 1.4;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .check-list li::before {
+    content: "✓";
+    color: #ACD155;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .why-box {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  .why-box h2 { color: #ACD155; }
+  .why-box .check-list li { color: #fff; }
+  .why-box .check-list li::before { color: #8138B7; }
+  .contact-bar {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 16px 20px;
+    margin-top: 18px;
+  }
+  .contact-bar h3 {
+    font-size: 10pt;
+    color: #ACD155;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .contact-bar p { color: #fff; font-size: 10pt; margin-bottom: 4px; }
+  .contact-bar a { color: #ACD155; text-decoration: none; }
+  .disclaimer {
+    position: absolute;
+    bottom: 0.4in;
+    left: 0.5in;
+    right: 0.5in;
+    font-size: 7pt;
+    color: #888;
+    line-height: 1.35;
+    font-style: italic;
+  }
+  .disclaimer strong { color: #555; font-style: normal; }
+  .page-footer {
+    position: absolute;
+    bottom: 0.3in;
+    left: 0.5in;
+    right: 0.5in;
+    text-align: center;
+    font-size: 7.5pt;
+    color: #999;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<div class="page">
+  <div class="top-bar"></div>
+
+  <div class="header">
+    <div>
+      <div class="brand">LIQUID GREEN</div>
+      <div class="tagline">FRANCHISING LLC</div>
+    </div>
+    <div class="meta">
+      FRANCHISE BROCHURE<br>
+      UPDATED 2026
+    </div>
+  </div>
+
+  <h1>Why Join<br>Liquid <span class="accent">Green</span></h1>
+  <p class="lede">A ground-floor franchise opportunity in one of the fastest-growing segments of the building products industry — spray foam insulation.</p>
+
+  <div class="two-col">
+    <div>
+      <h2>About <span class="accent">Us</span></h2>
+      <p>Liquid Green Spray Foam Insulation delivers advanced insulation solutions for residential and commercial properties, helping customers reduce energy costs and improve building performance. Established operations date back to 2010, incorporated in 2017, and are led by experienced ownership focused on scalable growth.</p>
+      <p>Liquid Green Franchising LLC is now expanding across the United States, offering motivated first-time operators the chance to build a business in a protected territory with a mobile, service-based model.</p>
+    </div>
+
+    <div class="why-box">
+      <h2>Why Join Us</h2>
+      <ul class="check-list">
+        <li>Enter a growing energy efficiency and construction industry</li>
+        <li>Be among the first franchisees — shape a young system with direct access to the founder</li>
+        <li>Protected territory model to support market growth</li>
+        <li>Operate a service-based business with recurring demand</li>
+        <li>Lower startup investment than many brands exceeding $200,000&ndash;$500,000</li>
+        <li>Opportunity to build a scalable and mobile operation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:18px">
+    <h2>Training &amp; Support</h2>
+    <p>Get the tools you need to launch with confidence — no prior spray foam experience required.</p>
+    <ul class="check-list">
+      <li>20 hours of classroom training</li>
+      <li>20 hours of hands-on training</li>
+      <li>1-to-2-week comprehensive onboarding program at our HQ</li>
+      <li>Coverage includes equipment, application, sales, operations, marketing, and compliance</li>
+    </ul>
+  </div>
+
+  <div class="page-footer">LIQUID GREEN FRANCHISING LLC &middot; 473 Rt 164, Brewster, NY</div>
+</div>
+
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page">
+  <div class="top-bar"></div>
+
+  <div class="header">
+    <div>
+      <div class="brand">LIQUID GREEN</div>
+      <div class="tagline">FRANCHISING LLC</div>
+    </div>
+    <div class="meta">
+      FRANCHISE BROCHURE<br>
+      PAGE 2 OF 2
+    </div>
+  </div>
+
+  <h2>Industry <span class="accent">Opportunity</span></h2>
+  <p>Spray foam insulation is one of the most effective solutions in the building envelope market today. Demand is being driven by three structural forces:</p>
+  <ul class="check-list">
+    <li><strong>Rising energy costs</strong> — homeowners and building owners are looking for the highest-R-value insulation available</li>
+    <li><strong>Stricter efficiency standards</strong> — state and local codes are tightening insulation and air-sealing requirements</li>
+    <li><strong>Strong residential and commercial demand</strong> — both new construction and retrofit markets are active</li>
+  </ul>
+
+  <div class="pull-box" style="margin-top:18px">
+    <h3>Ground-Floor Opportunity</h3>
+    <p>Liquid Green is still young as a franchisor. That means territories are still open across the U.S., the system is still being shaped, and early operators get direct access to ownership. This is the standard window for any emerging brand — and it doesn't stay open long.</p>
+  </div>
+
+  <h2 style="margin-top:18px">What Sets Us Apart</h2>
+  <ul class="check-list">
+    <li>Mobile business model — no storefront required, lower overhead</li>
+    <li>Transparent fee structure — no hidden national advertising costs</li>
+    <li>CRM included for franchise management</li>
+    <li>Protected territory per franchisee</li>
+    <li>Startup investment $136,000&ndash;$194,000</li>
+  </ul>
+
+  <div class="contact-bar">
+    <h3>Contact Us</h3>
+    <p><strong style="color:#ACD155">845-787-FOAM</strong> (3626)</p>
+    <p><a href="mailto:franchise@sprayliquidgreen.com">franchise@sprayliquidgreen.com</a></p>
+    <p>www.sprayliquidgreen.com</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> This advertisement is not an offering. An offering can only be made by a prospectus filed first with the Department of Law of the State of New York. Such filing does not constitute approval by the Department of Law. Liquid Green Spray Foam Insulation is the franchisor. Franchise offerings are made only by delivery of the Franchise Disclosure Document. Earnings figures, sales, costs, or profits are not implied or guaranteed. Actual results vary and there are no assurances you will earn as much as any numbers shown elsewhere. Protected territory subject to availability and operator performance.
+  </div>
+</div>
+
+</body>
+</html>
