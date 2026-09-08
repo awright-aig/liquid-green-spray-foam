@@ -125,20 +125,26 @@
   </ol>
 </nav>
 
-<!-- HERO with video -->
-<section class="page-hero page-hero-video" style="padding-top:50px;padding-bottom:36px">
-  <div class="hero-bg">
-    <video id="opp-hero-video" autoplay controls playsinline preload="metadata" poster="/assets/img/hero-video-poster.jpg" style="pointer-events:auto">
-      <source src="/assets/videos/franchise-opportunities-hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-      <source src="/assets/videos/franchise-opportunities-hero.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<!-- INTRO + FULL-SIZE VIDEO PLAYER -->
+<section class="section" style="padding-top:48px;padding-bottom:32px">
+  <div class="container" style="max-width:1080px">
+    <div class="eyebrow reveal" style="text-align:center;justify-content:center">Franchise Opportunity</div>
+    <h1 class="reveal" style="text-align:center;max-width:920px;margin:14px auto 14px">Watch the Opportunity Video</h1>
+    <p class="lead white reveal" style="text-align:center;max-width:780px;margin:0 auto 36px;font-style:italic">The Liquid Green Spray Foam franchise story — owner operator business, controlling your time, real investment opportunity, and the chance to be part of the green movement by building energy efficient homes. Press play, watch it through, then use the controls to rewatch any section.</p>
   </div>
-  <div class="hero-overlay" style="pointer-events:none"></div>
-  <div class="container" style="text-align:center;position:relative;z-index:3">
-    <span class="blog-card-tag reveal" style="margin:0 auto 16px">Franchise Opportunity</span>
-    <h1 class="reveal" style="max-width:920px;margin-inline:auto">Franchise Opportunity Video</h1>
-    <p class="lead white reveal" style="max-width:760px;margin:18px auto 0;font-style:italic">Watch the Liquid Green Spray Foam franchise story — owner operator business, controlling your time, real investment opportunity, and the chance to be part of the green movement by building energy efficient homes.</p>
+</section>
+
+<!-- FULL-SIZE VIDEO PLAYER (no overlay, controls visible) -->
+<section class="section" style="padding-top:0;padding-bottom:48px">
+  <div class="container" style="max-width:1080px">
+    <div class="opp-video-player" style="position:relative;width:100%;background:#000;border:1px solid rgba(172,209,85,.25);box-shadow:0 18px 50px rgba(0,0,0,.45);overflow:hidden;border-radius:6px">
+      <video id="opp-hero-video" controls autoplay playsinline preload="metadata" poster="/assets/img/hero-video-poster.jpg" style="display:block;width:100%;height:auto;background:#000">
+        <source src="/assets/videos/franchise-opportunities-hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+        <source src="/assets/videos/franchise-opportunities-hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="reveal" style="text-align:center;color:rgba(255,255,255,.6);font-size:13px;margin:16px auto 0;max-width:780px">Tip — the video autoplays with sound. If your browser blocked the sound, click anywhere on the page to enable it. Use the player controls to pause, seek, replay, mute, or fullscreen.</p>
   </div>
 </section>
 
