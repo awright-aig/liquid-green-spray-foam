@@ -32,6 +32,13 @@
 - [Blog: How to Bid a Spray Foam Job](https://sprayliquidgreen.com/franchise/blog/how-to-bid-spray-foam-jobs): Bidding framework to protect your margin — cost stack, waste factor, common mistakes, when to walk away, and tracking job performance. Category: Operations
 - [Blog: Spray Foam Market Size & Growth](https://sprayliquidgreen.com/franchise/blog/spray-foam-market-size-growth): Market data and growth drivers — global market, regional breakdown, U.S. insulation contractor market, demand drivers, what's holding the market back, and the ground-floor window. Category: Industry
 
+## Service Locations
+- [Service Locations](https://sprayliquidgreen.com/locations): Spray foam insulation service areas — Brewster NY (headquarters), Western CT, NYC, NJ. Local crews, local expertise, "spray foam insulation near me" coverage.
+- [Brewster, NY (Headquarters)](https://sprayliquidgreen.com/locations/brewster-ny): Liquid Green Spray Foam HQ — 473 Rt 164. Serving Putnam, Dutchess, and northern Westchester counties from the Hudson Valley HQ.
+- [Western Connecticut](https://sprayliquidgreen.com/locations/west-ct): Fairfield County, Litchfield Hills, greater Danbury. Historic homes, equestrian properties, and new construction.
+- [New York City](https://sprayliquidgreen.com/locations/nyc): All five boroughs — Manhattan, Brooklyn, Queens, the Bronx, Staten Island. Brownstones, new-construction, mixed-use, and commercial.
+- [New Jersey](https://sprayliquidgreen.com/locations/new-jersey): Bergen, Hudson, Essex, Morris, Monmouth, Ocean counties. Shore homes, masonry retrofits, and commercial across the state.
+
 ## Company Facts
 - Legal name: Spray Liquid Green
 - Alternate name: Liquid Green Spray Foam Insulation
