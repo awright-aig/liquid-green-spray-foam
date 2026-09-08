@@ -145,6 +145,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sprayliquidgreen.com/locations</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sprayliquidgreen.com/locations/brewster-ny</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sprayliquidgreen.com/locations/west-ct</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sprayliquidgreen.com/locations/nyc</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sprayliquidgreen.com/locations/new-jersey</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://sprayliquidgreen.com/testimonials</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
