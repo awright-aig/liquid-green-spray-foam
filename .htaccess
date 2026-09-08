@@ -31,6 +31,15 @@ DirectoryIndex index.html
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+franchise-brochure/?(\?\S*)?\s [NC]
   RewriteRule ^franchise-brochure/?$ /franchise/brochure/ [R=301,L]
 
+  # ---- 301 redirects: old blog URLs → new /franchise/blog/ subfolder ----
+  # /blog         -> /franchise/blog
+  # /blog/SLUG    -> /franchise/blog/SLUG
+  # (with optional trailing slash and query string preserved)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+blog/?(\?\S*)?\s [NC]
+  RewriteRule ^blog/?$ /franchise/blog/ [R=301,L]
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+blog/([^/\s\?]+)/?(\?\S*)?\s [NC]
+  RewriteRule ^blog/([^/]+)/?$ /franchise/blog/$1/ [R=301,L]
+
   # Rewrite clean URLs to .html files
   # e.g. /contact  ->  /contact.html
   RewriteCond %{REQUEST_FILENAME} !-f
