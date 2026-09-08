@@ -16,6 +16,21 @@ DirectoryIndex index.html
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.html[?\s] [NC]
   RewriteRule ^index\.html$ / [R=301,L]
 
+  # ---- 301 redirects: old franchise URLs → new /franchise/ subfolder ----
+  # /franchising          -> /franchise
+  # /franchise-faqs       -> /franchise/faqs
+  # /franchise-kit        -> /franchise/kit
+  # /franchise-brochure   -> /franchise/brochure
+  # (with optional trailing slash and query string preserved)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+franchising/?(\?\S*)?\s [NC]
+  RewriteRule ^franchising/?$ /franchise/ [R=301,L]
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+franchise-faqs/?(\?\S*)?\s [NC]
+  RewriteRule ^franchise-faqs/?$ /franchise/faqs/ [R=301,L]
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+franchise-kit/?(\?\S*)?\s [NC]
+  RewriteRule ^franchise-kit/?$ /franchise/kit/ [R=301,L]
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+franchise-brochure/?(\?\S*)?\s [NC]
+  RewriteRule ^franchise-brochure/?$ /franchise/brochure/ [R=301,L]
+
   # Rewrite clean URLs to .html files
   # e.g. /contact  ->  /contact.html
   RewriteCond %{REQUEST_FILENAME} !-f
