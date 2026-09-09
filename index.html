@@ -203,8 +203,17 @@
   "@id": "https://sprayliquidgreen.com/#website",
   "url": "https://sprayliquidgreen.com/",
   "name": "Spray Liquid Green",
+  "alternateName": ["Liquid Green Spray Foam", "Liquid Green Spray Foam Insulation"],
   "inLanguage": "en-US",
-  "publisher": {"@id": "https://sprayliquidgreen.com/#organization"}
+  "publisher": {"@id": "https://sprayliquidgreen.com/#organization"},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://sprayliquidgreen.com/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 
