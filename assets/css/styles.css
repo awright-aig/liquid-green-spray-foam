@@ -239,8 +239,24 @@ summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:'Raleway',s
 .accordion summary:hover,details:hover,details[open] summary{background:linear-gradient(135deg,rgba(172,209,85,.15) 0%,rgba(129,56,183,.18) 100%);border-color:rgba(129,56,183,.4)}
 .accordion details[open]{border-color:rgba(129,56,183,.5)}
 summary::-webkit-details-marker{display:none}
-summary::after{display:none}
-details[open] summary::after{display:none}
+/* +/- toggle on the right of every accordion summary */
+summary::after{
+  content:"+";
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(172,209,85,.18);
+  color:var(--lime);
+  font-size:22px;font-weight:600;line-height:1;
+  flex-shrink:0;margin-left:14px;
+  transition:background .2s ease,color .2s ease,transform .25s ease;
+  font-family:'Raleway',system-ui,sans-serif;
+}
+details[open] summary::after{
+  content:"\2212"; /* minus sign, visually heavier than a hyphen */
+  background:var(--purple);
+  color:#fff;
+  transform:rotate(180deg);
+}
 details .answer{padding:0 20px 18px}
 details .answer p{color:var(--offwhite);line-height:1.85}
 details .answer strong,.details .answer em{color:var(--lime);font-style:italic}
