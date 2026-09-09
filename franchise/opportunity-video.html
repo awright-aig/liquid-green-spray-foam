@@ -17,19 +17,13 @@
 <meta property="og:title" content="Liquid Green Spray Foam Franchise Opportunity Video">
 <meta property="og:description" content="Watch the Liquid Green franchise opportunity video. Owner operator business, controlling your time, investment opportunity, part of the green movement, building energy efficient homes.">
 <meta property="og:url" content="https://sprayliquidgreen.com/franchise/opportunity-video">
-<meta property="og:image" content="https://i.vimeocdn.com/video/2198661755-30903ae9d9eff4867919b7098b33a09446106c93228e969841fb92cf99641230-d_1280">
-<meta property="og:video" content="https://vimeo.com/1225037248/af75404327">
-<meta property="og:video:secure_url" content="https://vimeo.com/1225037248/af75404327">
-<meta property="og:video:type" content="text/html">
+<meta property="og:image" content="https://sprayliquidgreen.com/assets/img/franchise-opportunity-video-poster.jpg">
 <meta property="og:locale" content="en_US">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Liquid Green Spray Foam Franchise Opportunity Video">
 <meta name="twitter:description" content="Watch the Liquid Green franchise opportunity video. Owner operator business, controlling your time, investment opportunity, part of the green movement, building energy efficient homes.">
-<meta name="twitter:image" content="https://i.vimeocdn.com/video/2198661755-30903ae9d9eff4867919b7098b33a09446106c93228e969841fb92cf99641230-d_1280">
-<meta name="twitter:player" content="https://player.vimeo.com/video/1225037248?h=af75404327">
-<meta name="twitter:player:width" content="1280">
-<meta name="twitter:player:height" content="720">
+<meta name="twitter:image" content="https://sprayliquidgreen.com/assets/img/franchise-opportunity-video-poster.jpg">
     <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/assets/img/favicon-16.png" type="image/png" sizes="16x16">
@@ -43,10 +37,10 @@
   "@id":"https://sprayliquidgreen.com/franchise/opportunity-video#video",
   "name":"Liquid Green Spray Foam Franchise Opportunity Video",
   "description":"Liquid Green Spray Foam franchise opportunity video. Owner operator business, controlling your time, investment opportunity, part of the green movement, building energy efficient homes.",
-  "thumbnailUrl":"https://i.vimeocdn.com/video/2198661755-30903ae9d9eff4867919b7098b33a09446106c93228e969841fb92cf99641230-d_1280",
-  "contentUrl":"https://vimeo.com/1225037248/af75404327",
-  "embedUrl":"https://player.vimeo.com/video/1225037248?h=af75404327",
-  "uploadDate":"2026-09-08",
+  "thumbnailUrl":"https://sprayliquidgreen.com/assets/img/franchise-opportunity-video-poster.jpg",
+  "contentUrl":"https://sprayliquidgreen.com/assets/videos/franchise-opportunity-video.mp4",
+  "embedUrl":"https://sprayliquidgreen.com/franchise/opportunity-video",
+  "uploadDate":"2026-09-09",
   "duration":"PT1M2S",
   "publisher":{
     "@type":"Organization",
@@ -143,17 +137,14 @@
 <!-- FULL-SIZE VIDEO PLAYER (no overlay, controls visible) -->
 <section class="section" style="padding-top:0;padding-bottom:48px">
   <div class="container" style="max-width:1080px">
-    <div class="opp-video-player" style="position:relative;width:100%;background:#000;border:1px solid rgba(172,209,85,.25);box-shadow:0 18px 50px rgba(0,0,0,.45);overflow:hidden;border-radius:6px;aspect-ratio:16/9">
-      <iframe
-        src="https://player.vimeo.com/video/1225037248?h=af75404327&title=0&byline=0&portrait=0&badge=0&responsive=1"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        title="Liquid Green Spray Foam Franchise Opportunity Video"
-        loading="lazy">
-      </iframe>
+    <div class="opp-video-player" style="position:relative;width:100%;background:#000;border:1px solid rgba(172,209,85,.25);box-shadow:0 18px 50px rgba(0,0,0,.45);overflow:hidden;border-radius:6px">
+      <video id="opp-video" controls preload="metadata" playsinline poster="/assets/img/franchise-opportunity-video-poster.jpg" style="display:block;width:100%;height:auto;background:#000">
+        <source src="/assets/videos/franchise-opportunity-video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+        <source src="/assets/videos/franchise-opportunity-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <p class="reveal" style="text-align:center;color:rgba(255,255,255,.6);font-size:13px;margin:16px auto 0;max-width:780px">Tip — this is the full Liquid Green Spray Foam franchise opportunity walkthrough. Press play, use the player controls to pause, seek, replay, mute, or fullscreen any section.</p>
+    <p class="reveal" style="text-align:center;color:rgba(255,255,255,.6);font-size:13px;margin:16px auto 0;max-width:780px">Tip — this is the full Liquid Green Spray Foam franchise opportunity walkthrough. Press play, use the controls to pause, seek, replay, mute, or fullscreen any section.</p>
   </div>
 </section>
 
@@ -276,30 +267,10 @@
 </footer>
 <script src="/assets/js/main.js"></script>
 <script>
-/* Opportunity Video — Vimeo iframe embed.
-   The Vimeo player handles play / pause / seek / mute /
-   fullscreen / PiP. We just lazy-load the iframe on
-   intersection so we don't pull Vimeo's JS+CSS for visitors
-   who never scroll to it. */
-(function(){
-  var ifr = document.querySelector('.opp-video-player iframe');
-  if (!ifr) return;
-  var src = ifr.getAttribute('data-src') || ifr.getAttribute('src');
-  if (!ifr.hasAttribute('data-src')) {
-    ifr.setAttribute('data-src', src);
-    ifr.removeAttribute('src');
-  }
-  if (!('IntersectionObserver' in window)) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting) {
-        ifr.setAttribute('src', src);
-        io.disconnect();
-      }
-    });
-  }, { rootMargin: '200px' });
-  io.observe(ifr);
-})();
+/* Opportunity Video — self-hosted MP4, native controls.
+   No autoplay, no programmatic .play(). Browsers lazy-load
+   the metadata only (preload="metadata") and start the full
+   file on first play. */
 </script>
 </body>
 </html>
