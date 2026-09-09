@@ -138,13 +138,13 @@
 <section class="section" style="padding-top:0;padding-bottom:48px">
   <div class="container" style="max-width:1080px">
     <div class="opp-video-player" style="position:relative;width:100%;background:#000;border:1px solid rgba(172,209,85,.25);box-shadow:0 18px 50px rgba(0,0,0,.45);overflow:hidden;border-radius:6px">
-      <video id="opp-video" controls preload="metadata" playsinline poster="/assets/img/franchise-opportunity-video-poster.jpg" style="display:block;width:100%;height:auto;background:#000">
+      <video id="opp-video" controls autoplay muted playsinline preload="auto" poster="/assets/img/franchise-opportunity-video-poster.jpg" style="display:block;width:100%;height:auto;background:#000">
         <source src="/assets/videos/franchise-opportunity-video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
         <source src="/assets/videos/franchise-opportunity-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <p class="reveal" style="text-align:center;color:rgba(255,255,255,.6);font-size:13px;margin:16px auto 0;max-width:780px">Tip — this is the full Liquid Green Spray Foam franchise opportunity walkthrough. Press play, use the controls to pause, seek, replay, mute, or fullscreen any section.</p>
+    <p class="reveal" style="text-align:center;color:rgba(255,255,255,.6);font-size:13px;margin:16px auto 0;max-width:780px">Tip — the video starts muted when the tab opens. Click the speaker icon on the player to enable sound, or use the controls to pause, seek, replay, or fullscreen any section.</p>
   </div>
 </section>
 
@@ -267,10 +267,25 @@
 </footer>
 <script src="/assets/js/main.js"></script>
 <script>
-/* Opportunity Video — self-hosted MP4, native controls.
-   No autoplay, no programmatic .play(). Browsers lazy-load
-   the metadata only (preload="metadata") and start the full
-   file on first play. */
+/* Opportunity Video — self-hosted MP4, autoplays muted once on
+   page load. Modern browsers (Chrome, Safari, Firefox, Edge) all
+   allow muted autoplay without a prior user gesture; the native
+   <video controls> still handles play / pause / seek / mute /
+   fullscreen. The poster hides the first frame on slow
+   connections, and the video fades in once playback starts. */
+(function(){
+  var v = document.getElementById('opp-video');
+  if (!v) return;
+  // Browser autoplay can race with the source load. If the page
+  // is restored from the back-forward cache the autoplay attribute
+  // alone may not restart playback — kick it explicitly once we
+  // know we can play.
+  v.addEventListener('canplay', function once(){
+    var p = v.play();
+    if (p && p.catch) p.catch(function(){ /* user can hit play */ });
+    v.removeEventListener('canplay', once);
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
