@@ -1,5 +1,5 @@
 # robots.txt — Spray Liquid Green
-# https://sprayliquidgreen.com/robots.txt
+# https://liquidgreenfranchise.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -37,4 +37,4 @@ Disallow: /cgi-bin/
 Disallow: /.well-known/
 
 # Sitemap
-Sitemap: https://sprayliquidgreen.com/sitemap.xml
+Sitemap: https://liquidgreenfranchise.com/sitemap.xml

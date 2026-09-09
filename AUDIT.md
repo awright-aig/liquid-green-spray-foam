@@ -114,7 +114,7 @@ I'll **not** touch body content, copy, or visual styling. The existing site is g
 
 ## Assumptions I'm making (flag if wrong)
 
-- **Canonical domain:** `https://sprayliquidgreen.com/` (inferred from `info@sprayliquidgreen.com`). If your actual domain is different, I'll swap it in all 8 pages + `sitemap.xml`.
+- **Canonical domain:** `https://sprayliquidgreen.com/` (inferred from `info@liquidgreenfranchise.com`). If your actual domain is different, I'll swap it in all 8 pages + `sitemap.xml`.
 - **Business name:** "Spray Liquid Green" (with "Liquid Green Spray Foam Insulation" as alternate). Confirmed from your meta description.
 - **Address zip:** 10509 (Brewster, NY 10509 — US Postal Service standard). Will use as default.
 - **Geo coordinates:** 41.3973, -73.6168 (Brewster town center). Approximate; Google will accept a small radius.
