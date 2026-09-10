@@ -30,8 +30,8 @@
     <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/assets/img/favicon-16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/assets/img/favicon-180.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="alternate" type="text/plain" href="llms.txt" title="LLMs.txt">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js" defer></script>
 <!-- Cloudflare Turnstile (bot protection) -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -344,7 +344,7 @@
 
 <section class="page-hero page-hero-video" style="padding-top:50px;padding-bottom:36px">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline poster="assets/img/hero-video-poster.jpg">
+    <video autoplay muted loop playsinline poster="/assets/img/hero-video-poster.jpg">
       <source src="/assets/img/slg-hero-video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
       <source src="/assets/img/slg-hero-video.mp4" type="video/mp4">
     </video>
@@ -834,7 +834,7 @@
     var hint = document.getElementById('us-map-hint');
     if (!wrapper) return;
 
-    fetch('assets/img/us-map.svg')
+    fetch('/assets/img/us-map.svg')
       .then(function(r) { return r.text(); })
       .then(function(svgText) {
         // Parse the SVG and inject it inline
@@ -885,12 +885,12 @@
 
           // Click → go to franchise kit
           path.addEventListener('click', function() {
-            window.location.href = 'franchise-kit?state=' + code + '&name=' + encodeURIComponent(name);
+            window.location.href = '/kit?state=' + code + '&name=' + encodeURIComponent(name);
           });
           path.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              window.location.href = 'franchise-kit?state=' + code + '&name=' + encodeURIComponent(name);
+              window.location.href = '/kit?state=' + code + '&name=' + encodeURIComponent(name);
             }
           });
         });
